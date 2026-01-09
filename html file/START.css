@@ -1,0 +1,138 @@
+BODY
+{
+	BACKGROUND-COLOR:#290E0E;
+}
+UL
+{
+	LIST-STYLE-TYPE:NONE;
+	HEIGHT:20%;
+	MARGIN:30px;
+	PADDING:10px;
+	OVERFLOW:HIDDEN;
+	BACKGROUND-COLOR:#301201;
+	WIDTH:125%;
+}
+LI
+{
+	FLOAT:RIGHT;
+}
+LI a:HOVER
+{
+	background-color:#F2BC57;
+	color: red;	
+}
+LI A
+{
+    PADDING:30PX;
+	COLOR:WHITE;
+	MARGIN:AUTO;
+	TEXT-DECORATION:NONE;
+	font-size:large;
+}	 
+#HEAD 
+{
+	WIDTH:1856PX;
+	background-image:url(asia-eating.jpg);
+	MARGIN:AUTO;
+	OVERFLOW:HIDDEN;	
+}
+#HEAD P
+{
+	POSITION:RELATIVE;
+	COLOR:WHITE;
+	FONT-SIZE:900%;
+	MARGIN-LEFT:35%;
+}
+.PICTURE
+{
+	HEIGHT:705PX;
+	WIDTH:29%;
+	MARGIN-TOP:-707PX;
+	MARGIN-LEFT:70%;
+}
+.PICTURE>.CHILD
+{
+	WIDTH:50%;
+	HEIGHT:50%;
+	MARGIN-TOP:10PX;
+}
+.history
+{
+	MARGIN-LEFT:25%;
+	HEIGHT:705PX;
+	WIDTH:35%;
+	PADDING:20PX;
+}
+.history>p,h1
+{
+	color:#BD731E;
+	FONT-SIZE:150%;
+	font-family:permanent marker;
+}
+H2
+{
+	COLOR:#BD731E;
+	MARGIN-LEFT:30PX;
+	MARGIN-TOP:0;
+}
+.HOT
+{
+	MARGIN-LEFT:50PX;
+	COLOR:#BD731E;
+	WIDTH:350PX;
+	HEIGHT:500PX;
+	DISPLAY:FLEX;
+	FLOAT:LEFT;
+	TEXT-ALIGN:LEFT;
+	BACKGROUND-COLOR:TRANSPARENT;
+	PADDING-LEFT: 10PX;
+	MARGIN-TOP:0;
+	BORDER-WIDTH:2PX;
+	BORDER-STYLE:SOLID;
+	BORDER-COLOR:#BD731E;
+	FONT-FAMILY:Delius;
+}
+.HOT UL
+{
+	BACKGROUND-COLOR:TRANSPARENT;
+	OVERFLOW:VISIBLE;
+	LIST-STYLE-TYPE:SQUARE;
+	LINE-HEIGHT:45PX;
+}
+@media screen and (max-width: 1500px)
+{
+	.HOT,.history,H2
+	{
+		MARGIN-LEFT:20%;
+	}
+	.history
+	{
+		MARGIN-TOP:35%;
+	}
+	.history>p,h1
+	{
+		font-size:100%;
+	}
+	#HEAD >IMG
+	{
+		WIDTH:1233PX;
+	}
+	.PICTURE
+	{
+		MARGIN-TOP:-77%;
+		width:43%;
+		height:30%;
+		MARGIN-LEFT:70%;
+	}
+	
+}
+@media screen and (max-height: 700px)
+{
+	.PICTURE
+	{
+		MARGIN-TOP:-86%;
+		width:100%;
+		height:30%;
+		MARGIN-LEFT:90%;
+	}
+}

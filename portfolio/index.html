@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<META CHARSET="UTF-8">
+<META NAME="VIEWPORT" CONTENT="WEIDTH= WEIDTH-DEVICE, INITIAL-SCALE=1.0">
+<title>home</title>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&
+family=Permanent+Marker&family=Roboto+Condensed:ital,
+wght@0,100..900;1,100..900&family=Tagesschrift&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Birthstone&
+family=Delius&family=Kaushan+Script&family=David libre&family=Kenia&family=Konkhmer+Sleokchher&
+family=Lobster&family=Merienda&family=Newsreader&family=Lemon&family=Permanent+Marker&family=Roboto+Condensed:ital
+,wght@0,100..900;1,100..900&
+family=Roboto+Slab&family=Tagesschrift&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <!--svg width="150%" height="150%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="280" cy="150" r="140" fill="#F1C21B" />
+</svg-->
+<div class="back">
+  <div id="pic"><img src="camera.png" style="width:100%;height:100%;"></div>
+<p>Want<br>To<br>Explore <br>Me?</p>
+<div id="nav" class="overlay">
+<a href="javascript:void(0)" class="sheet" onlclick="closeNav()"></a>
+<p style="font-size:150px;color:black;text-align:center">Explore me<br> As.. </p>
+
+</div>
+<span onclick="openNav()"><button><b>Click here</b></button></span>
+</div>
+<script>
+function openNav()
+{
+	document.getElementById("nav").style.width="100%";
+}
+function closeNav() 
+{
+  document.getElementById("nav").style.width = "0%";
+}
+</script>
+</body>
+</html>

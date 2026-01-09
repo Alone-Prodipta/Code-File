@@ -1,0 +1,100 @@
+body
+{
+	overflow:hidden;
+	background-image:url("gate.jpg");
+	background-color:black;
+	background-size:cover;
+	background-attachment:fixed;
+
+	position:relative;
+}
+/*img
+{
+	z-index:-3;
+	position: relative;
+}*/
+.logo
+{
+	margin-top:-1083px;
+	position:relative;
+	
+}
+#name
+{
+	background-color:transparent;
+	position:fixed;
+	color:white;
+	width:60%;
+	height:55%;
+	font-size:72px;
+	font-family: Konkhmer Sleokchher;
+    padding-left: 10px;
+	margin-top:2%;
+	float:left;
+	margin-left:453px;
+	line-height:85px;
+}
+#shape
+{
+	margin-right: -16%;
+	margin-bottom: -44%;
+	opacity: 50%;
+	padding-left: 58%;
+}
+@media screen and (max-width: 1200px)
+{
+	#name
+	{
+		margin-left:163px;
+		
+	}
+	body
+	{
+		position:relative;
+		margin-top:100%;
+	}
+	#shape
+	{
+		margin-right: -16%;
+		margin-bottom: -44%;
+		opacity: 0.7;
+		padding-left: 58%;
+	}
+		
+	button
+	{
+		
+		width:40%;
+		margin-top:180px;
+		position:fixed;
+		
+	}
+}
+
+button
+{
+	background-color:#020202;
+	width:20%;
+	border-width:3px;
+	border-radius:40px;
+	border-color:yellow;
+	margin-top:8%;
+	
+	position:relative;
+
+}
+button>p
+{
+	font-family:david libre;
+	font-size:15px;
+	color:yellow;
+	list-style-type:none;
+	position:relative;
+}
+button>p a
+{
+	color:yellow;
+	text-decoration:none;
+	position:relative;
+	z-index:100;
+}

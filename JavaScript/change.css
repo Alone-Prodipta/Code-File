@@ -1,0 +1,79 @@
+
+div
+{
+    width:1970px;
+    height:90%;
+    float:left;
+    margin-top:10px;
+}
+.parent
+{
+    width:90%;
+    background-color:transparent;
+    height:40%;
+    display:flex;
+    margin-left:60px;
+    margin-top:200px;
+    overflow-x:auto;
+    gap: 1em;
+}
+.parent::-webkit-scrollbar
+{
+    display:none;
+}
+.grp
+{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    gap:1em;
+    animation: slide 5s infinite linear;
+    padding-right: 2px;
+}
+@keyframes slide
+{
+    from
+    {
+        translate:0;
+    }
+    to
+    {
+        translate:-50%;
+    }
+}
+#white
+{
+   background-color: hotpink;
+
+}
+#black
+{
+    background-color: black;
+}
+#pink
+{
+    background-color:pink;
+}
+#orange
+{
+    background-color:orange;
+}
+#red
+{
+    background-color:red;
+}
+#blueviolet
+{
+    background-color:orangered;
+}
+
+#blue
+{
+    background-color:blue;
+}
+
+#green
+{
+    background-color:green;
+}
+

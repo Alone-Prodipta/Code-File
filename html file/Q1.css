@@ -1,0 +1,116 @@
+body
+{
+	background-color:black;
+}
+ul
+{
+	LIST-STYLE-TYPE:NONE;
+	MARGIN-RIGHT:35%;
+	PADDING:0;
+	OVERFLOW:HIDDEN;
+	BACKGROUND-COLOR:black;
+	FLOAT:RIGHT;
+}
+LI
+{
+	FLOAT:LEFT;
+	
+}
+LI A
+{
+	DISPLAY:BLOCK;
+	COLOR:yellow;
+	TEXT-ALIGN:CENTER;
+	PADDING-left:54PX;
+	PADDING-right:54PX;
+	TEXT-DECORATION:NONE;
+	BACKGROUND-COLOR:black;
+	font-family:lemon;
+	font-size:16px;
+}
+button
+{
+	padding: 5px;
+	border-radius: 50px;
+	border-color:black;
+	background-color:black;
+	border-width:0;
+}
+	
+LI A, .nav:HOVER
+{
+	background-color:black;
+	color:yellow;
+	border-color:yellow;
+	border-radius:50px;
+	border-width: 3px;
+}
+p
+{
+	color:white;
+	line-height:160%;
+	margin-left:12px;
+}
+h3
+{
+	color:white;
+}
+div
+{
+	margin-left:30%;
+}
+input
+{
+	color:black;
+	border-color:yellow;
+	border-width:5px;
+	border-radius:40px;
+	border-style-type:solid;
+	width:30%;
+	height:5%;
+	padding-left:20px;
+}
+.submit
+{
+	background-color:black;
+	width:30%;
+	height:50px;
+	border:1px solid yellow;
+	border-radius:40px;
+	margin-left:18px;
+	color:yellow;
+	font-size:20px;
+	font-family:lemon;
+}
+.connect
+{
+	margin-top: -36%;
+	margin-left: 60%;
+	border-radius:10px;
+}
+.submit:hover
+{
+	background-color:yellow;
+	color:black;
+}
+.logo
+{
+	margin-top:-1083px;
+	position:relative;
+}
+#gender, #skill
+{
+	transform:scale(0.6);
+	margin-right: -12%;
+  	margin-top: -12px;
+  	margin-left: -127px;
+}
+select
+{
+	width:30%;
+	height:5%;
+	border-radius:40px;
+	background-color:yellow;
+	text-align:center;
+	font-size:16px;
+}

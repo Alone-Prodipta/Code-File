@@ -1,0 +1,176 @@
+tr,th,td,table
+{
+    background-color:#290E0E;
+    color:#BD731E;
+    border:2px;
+	border-radius:5px ;
+	text-align: center;
+	padding: 20px;
+	font-size: 16px;
+	font-family:permanent marker;
+}
+body
+{
+    background-color:#290E0E;
+	overflow-x:hidden;
+}
+
+.image
+{
+	margin:200px;
+	position:relative;
+	float: left;
+}
+.table
+{
+   
+	width: 700px;
+	float: left;
+}
+.form
+{
+	color:white;
+	font-size:30px;
+	float:left;
+	margin-left:175px;
+	padding-top: 80px;
+	color:#BD731E;
+	font-family: Roboto Condensed;
+}
+buttons
+{
+    background-color:#F2BC57;
+    color:#E70505;
+    border-radius:5px;
+    padding:10px;
+	margin-right: 69%;
+	font-family:lobster;
+	font-weight: 100;
+}
+th
+{
+    color:#802922;
+}
+img
+{
+	background-repeat:no-repeat;
+	background-position: right top;
+	background-attachment: fixed;
+}
+#heading
+{
+    padding:10px;
+    color:#BD731E;
+    background-color:solid yellow;
+    font-size:19px;
+}
+ .header-text
+{
+	
+	height:10px;
+	width:100%;
+	display:grid;
+	padding: 200px;
+	color:white;
+	font-size:185px;
+	text-align:center;
+	margin:auto;
+	background-image:url("asia-eating.jpg");
+}
+.header-text P
+
+{
+	POSITION: RELATIVE;
+	COLOR: WHITE;
+	MARGIN-LEFT: 5%;
+	MARGIN-TOP: 0;
+}
+.sno
+{
+    text-align:center;
+}
+ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color:#301201;
+}
+li
+{
+	float: right;
+	padding:14px;
+}
+li a
+{
+	display: flex;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	text-decoration: none;
+}
+li a:hover
+{
+	background-color:#F2BC57;
+	color: red;
+	padding:10px;
+}
+input
+{
+	height:30px;
+	width: 50%;
+	box-sizing:border-box;
+	padding: 20px,12px;
+	margin:10px ;
+	background-color:#260D03;
+	color: #BD731E;
+}
+.number
+{
+	background-color:#260D03;
+	color: #BD731E;
+	font-family:permanent marker;
+}
+@media screen and (max-width:1464px)
+{
+	ul 
+	{
+		margin-right: auto;
+		font-size:16px;
+	}
+	li
+	{
+		padding-left:0;
+		margin-left:-30px;
+	}
+	.image
+	{
+		opacity:1;
+	}
+	.table
+	{
+		margin-top:0;
+		margin-left:2px;
+	}
+	.form
+	{
+		margin-top:0;
+		margin-left:175px;
+	}
+	.form>img
+	{
+		margin-left:0;
+		margin-top:2%;
+		
+	}
+}
+@media screen and (max-width:1640px)
+{
+	.header-text>p
+	{
+		margin-left:-202px;
+		font-size:132px;
+	}
+		
+}

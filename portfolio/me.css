@@ -1,0 +1,135 @@
+
+body
+{
+	background-color:black;
+}
+ul
+{
+	LIST-STYLE-TYPE:NONE;
+	MARGIN-RIGHT:40%;
+	PADDING:0;
+	OVERFLOW:HIDDEN;
+	BACKGROUND-COLOR:black;
+	FLOAT:RIGHT;
+}
+LI
+{
+	FLOAT:LEFT;
+	
+}
+LI A
+{
+	DISPLAY:BLOCK;
+	COLOR:yellow;
+	TEXT-ALIGN:CENTER;
+	PADDING-left:54PX;
+	PADDING-right:54PX;
+	TEXT-DECORATION:NONE;
+	BACKGROUND-COLOR:black;
+	FONT-FAMILY:LEMON;
+}
+button
+{
+	padding: 8px;
+	border-radius: 10px;
+	border-color:trnasparent;
+	border-width: 0;
+	BACKGROUND-COLOR:black;
+}
+	
+LI A, .nav:HOVER
+{
+	background-color:black;
+	color:yellow;
+	border-color:yellow;
+	border-radius:50px;
+	border-width: 3px;
+}
+#about
+{
+	z-index:2;
+	position:relative;
+	width:450px;
+	height:720px;
+	padding:15px;
+	display:flex;
+	flex-direction:column;
+	padding-top:40px;
+	overflow-y:scroll;
+	margin-left:53%;
+	margin-top:-868px;
+	justify-content:center;
+	align-items:center;
+	color:white;
+}
+#about>button
+{
+	background-color: #FFEB00;
+	width: 36%;
+	border-radius: 40px;
+	border-color: #FFEB00;
+	margin-top: 5%;
+	margin-left: -289px;
+	font-family:david libre;
+	font-size:20px;
+	padding:0;
+	color:black;
+}
+#about>button a
+{
+	text-decoration:none;
+	color:black;
+}
+#profile
+{
+	width:430px;
+	height:700px;
+	position:relative;
+	margin-left:500px;
+	margin-top:-716px;
+	border-radius:20px;
+	z-index:2;
+}
+#profile>img
+{
+	height:100%;
+	weidth:100%;
+}
+@media screen and (max-width: 1825px)
+{
+	#section
+	{
+		
+		margin-left:38px;
+		margin-top:-716px;
+	}
+	#profile
+	{
+		margin-left:38px;
+		margin-top:-716px;
+	}
+	.nav
+	{
+		margin-left:4px;
+	}
+		
+}
+@media screen and (max-height: 400px)
+{
+	#section
+	{
+		
+		margin-left:38px;
+		margin-top:-716px;
+	}
+	#profile
+	{
+		margin-left:38px;
+		margin-top:-716px;
+	}
+	.nav
+	{
+		margin-left:-23px;
+	}
+	
+}

@@ -1,0 +1,141 @@
+body
+{
+	background-color:black;
+	overflow:hidden;
+}
+.back
+{
+	width:90%;
+	height:90%;
+	background-color:black;
+	margin-left:70px;
+	margin-top:3.5%;
+	border-width:5px;
+	border-color:yellow;
+	border-style:solid;
+	
+}
+#pic
+{
+	
+	z-index: 1;
+	position: relative;
+	float:right;
+	width:40%;
+	margin-right:30px;
+	margin-top: 40px;
+	height: 70%;
+}
+.back>p
+{
+	font-size:120px;
+	display:flex;
+	color:white;
+	text-align:center;
+	padding-left:200px;
+	justify-content:start;
+	margin-top:-170px;
+}
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:yellow;
+  /*background-color: rgba(0,0,0, 0.9);*/
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+#nav>p
+{
+	font-family:Roboto condensed;
+}
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .sheet {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+Button
+{
+	width:200px;
+	height:90px;
+	margin-left:290px;
+	border-width:2px;
+	border-color:yellow;
+	border-style:solid;
+	border-radius:10px;
+	font-size:30px;
+	color:yellow;
+	font-family:Newsletter;
+	background-color:black;
+	padding:10px;
+	
+}
+button:hover
+{
+	color:black;
+	background-color:yellow;
+	
+}
+@media screen and (max-width: 1564px)
+{
+	.back
+	{
+		padding-left: 10px;
+		padding-bottom: 0;
+		padding-top: 1rem;
+	}
+	.back>p
+	{
+		margin-top:2px;
+	}
+	button
+	{
+		margin-top:-10%;
+		height:65px;
+		padding:5px;
+	}
+
+}
+@media screen and (max-width: 1299px)
+{
+	#pic
+	{
+		height:25%;
+		width:30%;
+		margin-top:10px;
+		margin-right:38%;
+		position:relative;
+		display:block;
+	}
+	.back>p
+	{
+		margin-top:40%;
+	}
+	
+}
+	

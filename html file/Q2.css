@@ -1,0 +1,149 @@
+.front
+{
+	background-color:transparent;
+	margin:auto;
+	width:500px;
+	height:700px;
+	border-color:black;
+	border-style:solid;
+	border-width:5px;
+	padding-top:70px;
+	position:relative;
+	z-index:2;
+	padding-left:150px;
+	
+}
+p
+{
+	text-align:left;
+	color:#7C1ED9;
+	position:absolute;
+	z-index:3;
+	font-family:roboto slab;
+}
+img
+{
+	border-radius:20px;
+}
+
+.intro
+{
+	background-color:yellow;
+	border-radius:20px;
+	padding:40px;
+	padding-top:70px;
+	width:190px;
+	height:140px;
+	margin-left:641px;
+	text-align:top;
+	font-size:97px;
+	position:absolute;
+	overflow:visible;
+}
+.profession
+{
+	background-color:orange;
+	position:relative;
+	width:300px;
+	height:300px;
+	padding:40px;
+	text-align:left;
+	margin-top:12%;
+	font-size:385%;
+	margin-left:14px;
+	border-radius:50%;
+	float:left;
+		z-index:2;
+}
+.fun1
+{
+	background-color:red;
+	width:300px;
+	opacity:0.7;
+	height:300px;
+	padding:40px;
+	text-align:left;
+	margin-top:7%;
+	font-size:385%;
+	margin-left:-226px;
+	border-radius:50%;
+	float:left;
+	
+}
+.fun2
+{
+	background-color:blue;
+	width:96px;
+	height:105px;
+	padding:40px;
+	text-align:left;
+	margin-top:24%;
+	font-size:385%;
+	margin-left:-226px;
+	border-radius:50%;
+	float:left;
+}
+	
+ul
+{
+	
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	
+	color:#0083D4;
+
+	float:right;
+	overflow:hidden;
+}
+li a:hover
+{
+	background-color:cyan;
+	border-radius:10px;
+	color:#6201FF;	
+}
+li a
+{
+	display:block;
+	color: #0083D4;
+	text-align:center;
+	text-decoration:none;
+	background-color: white;
+	padding:16px;
+}
+li 
+{
+	float:left;
+}
+button
+{
+	margin-left:20%;
+	padding:14px;
+	width:14%;
+	font-family:roboto condensed;
+	border-radius:24px;
+	font-size:20px;
+	color:#6201FF;
+	transition:background-color 0.3s ease;
+	background-color:cyan;
+	border-color:blueviolet;
+	
+}
+button>a
+{
+	text-decoration:none;
+}
+.design
+{
+	background-color:#8CF002;
+	border-radius:20px;
+	padding:40px;
+	margin-top:-219px;;
+	width:190px;
+	height:140px;
+	margin-left:1230px;
+	text-align:top;
+	font-size:97px;
+	position:absolute;
+	overflow:visible;
+}

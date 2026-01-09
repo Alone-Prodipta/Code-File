@@ -1,0 +1,94 @@
+body
+{
+    background-color:#290E0E;
+}
+.header-text
+{
+	
+	height:10px;
+	weidth:100%;
+	display:grid;
+	padding: 200px;
+	color:white;
+	font-size:185px;
+	text-align:center;
+	margin:auto;
+	background-image:url("asia-eating.jpg");
+}
+.header-text P
+{
+	POSITION: RELATIVE;
+	COLOR: WHITE;
+	font-family:none;
+	MARGIN-LEFT: 5%;
+	font-size:90%;
+	MARGIN-TOP: 0;
+}
+ul
+{
+	list-style-type: none;
+	margin: 30;
+	padding: auto;
+	overflow: hidden;
+	background-color:#290e0e;
+}
+li
+{
+	float: right;
+}
+li a
+{
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 17px;
+	text-decoration: none;
+}
+li a:hover
+{
+	background-color:#F2BC57;
+	color: red;
+}
+p
+{
+	color:#BD731E;
+	font-size:44px;
+	text-align:center;
+	font-family:permanent marker;
+}
+input,label
+{
+	margin-left:971px;
+	background-color:#290E0E;
+	color:#BD731E;
+	font-size:44px;
+}
+button
+{
+    background-color:#F2BC57;
+    color:#E70505;
+    border-radius:5px;
+    padding:20px;
+	width:90px;
+	margin-left: 45%;
+	font-family:lobster;
+	font-weight: 100;
+}
+.connect
+{
+	width:50%;
+	height:50%;
+}
+
+.social
+{
+	width:30%;
+	margin-left:30%;
+	height: 50%;
+}
+.social >p
+{
+	margin:10%;
+}
+	
+	

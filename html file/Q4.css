@@ -1,0 +1,143 @@
+img
+{
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+}
+
+
+	
+.mountain1
+{
+	height:500px;
+	width:477px;
+	border-radius:10px;
+	border-color:none;
+	background-color:white;
+	text-align:center;
+	display:inline-block;
+	margin:1% 1% 1% 1%;
+	box-shadow:10px 12px 30px; 
+	
+}
+.mountain2
+{
+	height:500px;
+	width:477px;
+	border-radius:10px;
+	border-color:none;
+	background-color:white;
+	text-align:center;
+	display:inline-block;
+		margin:0% 1% 0% 1%;
+		box-shadow:10px 12px 30px; 
+}
+.mountain3
+{
+	height:500px;
+	width:477px;
+	border-radius:10px;
+	border-color:none;
+	background-color:white;
+	text-align:center;
+	display:inline-block;
+	margin:0% 1% 0% 1%;
+	box-shadow:10px 12px 30px; 
+}
+.mountain4
+{
+	height:500px;
+	width:477px;
+	border-radius:10px;
+	border-color:none;
+	background-color:white;
+	text-align:center;
+	display:inline-block;
+	margin:0% 1% 0% 1%;
+	box-shadow:10px 12px 30px; 
+}
+.mountain5
+{
+	height:500px;
+	width:477px;
+	border-radius:10px;
+	border-color:none;
+	background-color:white;
+	text-align:center;
+	display:inline-block;
+		margin:0% 1% 0% 1%;
+		box-shadow:10px 12px 30px; 
+}
+.mountain6
+{
+	height:500px;
+	width:477px;
+	border-radius:10px;
+	border-color:none;
+	background-color:white;
+	text-align:center;
+	display:inline-block;
+		margin:1% 1% 1% 1%;
+		box-shadow:10px 12px 30px; 
+}
+Button
+{
+	margin-top:20px;
+	padding:20px;
+	border-color:blue;
+	background-color:transparent;
+	font-size:20px;
+	font-family:delius;
+}
+.HOVER_TEXT .TOOLTIP
+{
+	VISIBILITY: hidden;
+  WIDTH: 450PX;
+  BACKGROUND-COLOR: #CAFDFF;
+  COLOR: #1D438A;
+  TEXT-ALIGN: CENTER;
+  BORDER-RADIUS: 10PX;
+  PADDING: 5PX 10;
+  POSITION: ABSOLUTE;
+  Z-INDEX: 1;
+  bottom: 125%;
+  LEFT: 50%;
+  MARGIN-LEFT: -222PX;
+  OPACITY: 0;
+  TRANSITION: OPACITY 0.3S;
+  margin-bottom: -33%;
+  height: 450%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.HOVER_TEXT:HOVER .TOOLTIP
+{
+VISIBILITY:VISIBLE;
+FONT-FAMILY:Tagesschrift;
+OPACITY:1;
+}
+.HOVER_TEXT .TOOLTIP::AFTER
+{
+CONTENT:" ";
+POSITION:ABSOLUTE;
+top:100%;
+LEFT:50%;
+MARGIN-LEFT:-16PX;
+BORDER-WIDTH:8PX;
+BORDER-STYLE:SOLID;
+BORDER-COLOR: TRANSPARENT TRANSPARENT #CAFDFF;
+BORDER-RADIUS:50% 50% 0 0;
+
+}
+.HOVER_TEXT
+{
+POSITION:RELATIVE;
+DISPLAY:INLINE-BLOCK;
+BORDER-BOTTOM:1PX;
+BACKGROUND-COLOR:TRANSPARENT;
+}
+li
+{
+	list-style-type:none;
+
+}
