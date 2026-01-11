@@ -1,0 +1,32 @@
+ul
+{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+li
+{
+    float:right;
+    color:black;
+    background-color:green;
+    border:2px solid white;
+    border-radius:50px;
+    margin-bottom:10px;
+}
+li a
+{
+    display:block;
+    color:white;
+    padding:16px;
+    text-decoration:none;
+}
+.content
+{
+   background-position: center;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+}
+
+
