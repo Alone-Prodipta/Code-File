@@ -1,14 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
-//int isempty(int*);
-//int isfull(int*);
+
 typedef struct 
 {
     int size;
     int top;
     int *A;
 }s1;
-
+void printStack(s1 *ptr);
+void push(s1 *ptr, int val);
+int isfull(s1* ptr);
+int isempty(s1* ptr);
 void main()
 {
     int i=0,str[100],*p,length=0;
