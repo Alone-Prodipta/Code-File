@@ -9,10 +9,10 @@ int main()
     string str1,str2;
     char str3[100];
     cout<<"Enter any text:\n";
-    cin>>str1;
+    getline(cin,str1);
     cout<<"Enter any text:\n";
-    cin>>str2;
-    
+    getline(cin,str2);
+
     /*Although we can simple connect two or more strings by giving '+' operator in c++ programming.
     but i have written the function behind that.*/
 
