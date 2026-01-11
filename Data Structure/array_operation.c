@@ -149,11 +149,11 @@ int search(int list[])
             }
                 if(flag==1)
                 {
-                    printf("Number found");
+                    printf("Number found at position: %d",mid);
                 }
                 else
                 {
-                    printf("Number not found at position: %d",mid);
+                    printf("Number not found");
                 }
                 break;
         }
