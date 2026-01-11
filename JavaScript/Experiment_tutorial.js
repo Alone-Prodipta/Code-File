@@ -24,7 +24,6 @@ account_email= "pnayeb@gmail.com";
 // console.log(city);
 // console.log(account_email);
 // console.log(password);
-
 //prints everything in the format of a table.
             //console.table([account_id,account_email,password,city]);
 
@@ -265,7 +264,8 @@ const customer={
     price: 5500,
     welcomemsg: function()
     {
-        console.log(`${this.name} ,welcome to the website`);   //This keyword is used to refer the current context.
+        console.log(`${this.name} ,welcome to the website`);   
+        //This keyword is used to refer the current context.
 
     }
 }
@@ -379,3 +379,5 @@ dishes.forEach((item, index, arr)=>
  * =>document.addEventListener("event_name", function_name); -->used to add event listeners to HTML elements, used in hover effects & functionalities.
  *   */
 
+/**************************************************************************/
+//DOM manipulation & NodeList..(Document Object Model)
