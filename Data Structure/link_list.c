@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#define size 5;
 struct node 
 {
     int data;
