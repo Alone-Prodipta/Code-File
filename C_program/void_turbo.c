@@ -19,7 +19,8 @@ int date_31(int c,int data[5][7])
             c++;
             if(c>31)
             {
-                break;
+                printf("\n");
+                return;
             }
         }
         printf("\n");
@@ -55,6 +56,11 @@ void janu(int data[7][5])
     int i,j,c=1;
     date_31(c,data);
     
+}
+void april(int c,int data[7][5])
+{
+    int i,j;
+    date_30(c,data);
 }
 void jan(int c,int data[7][5])
 {
@@ -136,6 +142,20 @@ void main()
                 jan(c,january->data);
 
         }
-        
+        case 4:
+        {
+            c=1;
+            printf("     April    \n");
+            printf(" sun mon tues wedn thur frid  sat\n");
+            printf("                             ");
+            for(int k=1;k<=1;k++)
+            {
+                printf("  0%d ",c);
+                c++;
+            }
+            printf("\n");
+                april(c,january->data);
+
+        }
     }
 }
