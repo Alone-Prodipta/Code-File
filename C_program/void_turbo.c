@@ -140,7 +140,6 @@ void main()
             }
             printf("\n");
                 jan(c,january->data);
-
         }
         case 4:
         {
