@@ -5,9 +5,11 @@ typedef struct list
     int data;
     struct list* next;
 }node;
-first_node_delete(node* pt)
+node* first_node_delete(node* pt)
 {
-    
+    pt= pt->next;
+    free(pt);
+    return head;    
 }
 void main()
 {
@@ -31,4 +33,7 @@ void main()
         printf("Elemnts: %d\n",head->data);
         head= head->next;
     }
+    printf("After deletion:\n");
+
+    first_node_delete(head);
 }
