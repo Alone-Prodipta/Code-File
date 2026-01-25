@@ -5,7 +5,10 @@ typedef struct list
     int data;
     struct list* next;
 }node;
-
+first_node_delete(node* pt)
+{
+    
+}
 void main()
 {
     node* head;
