@@ -5,30 +5,65 @@ typedef struct list
     int data;
     struct list* next;
 }node;
-first_node_delete(node* pt)
+void traversal(node* pt)
 {
-    
+    while(pt != NULL)
+    {
+        printf("Elemnts: %d\n",pt->data);
+        pt= pt->next;
+    }
+}
+node* first_node_delete(node* pt)
+{
+    node* str= pt;
+    pt= pt->next;
+    free(str);
+    return(pt);
+}
+node* delete_btwn(node* pt,int index)
+{
+    int i=0;
+    node* ptr = pt;
+    node* temp;   
+    while(i != (index-1))
+    {
+        ptr = ptr->next;
+        i++;
+    }
+    if( ptr->next != NULL)
+    {
+        temp = ptr->next;
+        ptr->next = temp->next;
+        free(temp);
+    }
+    return pt;
 }
 void main()
 {
     node* head;
-    node* dt;
-    node* tri;
+    node* one;
+    node* two;
+    node* three;
     head= (node* )malloc(sizeof(node));
-    dt =(node* )malloc(sizeof(node));
-    tri =(node* )malloc(sizeof(node));
+    one =(node* )malloc(sizeof(node));
+    two =(node* )malloc(sizeof(node));
     head->data= 52;
-    head->next= dt;
+    head->next= one;
     
-    dt->data= 82;
-    dt->next= tri;
+    one->data= 82;
+    one->next= two;
+    
+    two->data= 46;
+    two->next= three;
 
-    tri->data= 94;
-    tri->next= NULL;
+    three->data= 94;
+    three->next= NULL;
 
-    while(head != NULL)
-    {
-        printf("Elemnts: %d\n",head->data);
-        head= head->next;
-    }
+    traversal(head);
+    head=  first_node_delete(head);
+    printf("After deletion:\n");
+    traversal(head);
+    head= delete_btwn(head,1);
+    printf("After deletion:\n");
+    traversal(head);
 }
