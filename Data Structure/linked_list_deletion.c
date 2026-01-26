@@ -13,7 +13,19 @@ void traversal(node* pt)
         pt= pt->next;
     }
 }
-//node* first_node_delete(node* pt);
+node* delete_end(node* pt)
+{
+    node* trav = pt;
+    while(trav->next->next != NULL)
+    {
+        trav = trav->next;
+    }
+    trav->next = NULL;
+    free(trav->next);
+    return pt;
+}
+
+
 node* first_node_delete(node* pt)
 {
     node* str= pt;
@@ -35,7 +47,6 @@ node* delete_btwn(node* pt,int index)
     {
         temp = ptr->next;
         ptr->next = temp->next;
-        //free(temp);
     }
     return pt;
     pt= pt->next;
@@ -50,6 +61,7 @@ void main()
     head= (node* )malloc(sizeof(node));
     one =(node* )malloc(sizeof(node));
     two =(node* )malloc(sizeof(node));
+    three= (node* )malloc(sizeof(node));
     head->data= 52;
     head->next= one;
     
@@ -64,10 +76,14 @@ void main()
 
     traversal(head);
     //head=  first_node_delete(head);
-    printf("After deletion:\n");
+    //printf("After deletion:\n");
     //traversal(head);
 
     head= delete_btwn(head,1);
+    printf("After deletion:\n");
+    traversal(head);
+
+    head= delete_end(head);
     printf("After deletion:\n");
     traversal(head);
 
