@@ -14,6 +14,7 @@ void traversal(node* pt)
     }
 }
 node* first_node_delete(node* pt)
+node* first_node_delete(node* pt)
 {
     node* str= pt;
     pt= pt->next;
@@ -37,6 +38,9 @@ node* delete_btwn(node* pt,int index)
         free(temp);
     }
     return pt;
+    pt= pt->next;
+    free(pt);
+    return head;    
 }
 void main()
 {
@@ -66,4 +70,12 @@ void main()
     head= delete_btwn(head,1);
     printf("After deletion:\n");
     traversal(head);
+    while(head != NULL)
+    {
+        printf("Elemnts: %d\n",head->data);
+        head= head->next;
+    }
+    printf("After deletion:\n");
+
+    first_node_delete(head);
 }
