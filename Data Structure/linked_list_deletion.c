@@ -63,9 +63,9 @@ void main()
     three->next= NULL;
 
     traversal(head);
-    head=  first_node_delete(head);
+    //head=  first_node_delete(head);
     printf("After deletion:\n");
-    traversal(head);
+    //traversal(head);
 
     head= delete_btwn(head,1);
     printf("After deletion:\n");
