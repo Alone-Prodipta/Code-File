@@ -3,86 +3,28 @@ body {
   margin: 0;
 }
 
-/*$bubble-count: 50;
-$sway-type: "sway-left-to-right", "sway-right-to-left";
 
-@function random_range($min, $max) {
-  $rand: random();
-  $random_range: $min + floor($rand * (($max - $min) + 1));
-  @return $random_range;
-}
-
-@function sample($list) {
-  @return nth($list, random(length($list)));
-}
-
-.bubbles {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.bubble {
-  position: absolute;
-  left: var(--bubble-left-offset);
-  bottom: -75%;
-  display: block;
-  width: var(--bubble-radius);
-  height: var(--bubble-radius);
-  border-radius: 50%;
-  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
-
-  &::before {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: hsla(183, 94%, 76%, 0.3);
-    border-radius: inherit;
-    animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
-  }
-
-  @for $i from 0 through $bubble-count {
-    &:nth-child(#{$i}) {
-      --bubble-left-offset: #{random_range(0vw, 100vw)};
-      --bubble-radius: #{random_range(1vw, 10vw)};
-      --bubble-float-duration: #{random_range(6s, 12s)};
-      --bubble-sway-duration: #{random_range(4s, 6s)};
-      --bubble-float-delay: #{random_range(0s, 4s)};
-      --bubble-sway-delay: #{random_range(0s, 4s)};
-      --bubble-sway-type: #{sample($sway-type)};
+    .bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover; 
+      z-index: -1; 
     }
-  }
-}
 
-@keyframes float-up {
-  to {
-    transform: translateY(-175vh);
-  }
-}
+    
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      top: 40%;
+      font-size: 2em;
+      font-family: Arial, sans-serif;
+    }
 
-@keyframes sway-left-to-right {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes sway-right-to-left {
-  from {
-    transform: translateX(100%);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
-}*/
 .calculator
 {
     box-shadow:0 15px 35px rgba(0 ,0, 0, 0.5);
@@ -96,7 +38,7 @@ $sway-type: "sway-left-to-right", "sway-right-to-left";
     top:200px;
     border-radius:15px;
     text-align:center;
-    padding-bottom:30px;
+    padding-bottom:60px;
     padding-left:40px;
 }
 button
@@ -117,7 +59,16 @@ button
 }
 #cross, #divide, #minus, #add
 {
-    background-color:yellow;
+    background-color:cyan;
+    color:navy;
+}
+td:hover button
+{
+    box-shadow:0 5px 15px rgba(145, 207, 235, 0.3);
+    cursor:pointer;
+    transform:translateY(-2px);
+    transition:0.3s;
+    border:rgb(126, 203, 239) solid 1.5px;
 }
 input
 {
@@ -125,12 +76,14 @@ input
     height:50px;
     border:none;
     margin-top:20px;
+    top:20px;
+    position:relative;
     margin-left:-40px;
     border-radius:50px;
-    font-size:20px;
+    font-size:50px;
     text-align:right;
     padding-right:20px;
-    background-color:black;
+    background-color:transparent;
     color:white;
     font-weight:bold;
 }
@@ -148,4 +101,13 @@ input:focus
     outline:none;
     cursor:none;
     caret-color: transparent;
+}
+input::placeholder
+{
+    color:white;
+}
+header
+{
+  background-color: red;
+  padding:5px;
 }
