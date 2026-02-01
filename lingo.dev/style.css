@@ -109,6 +109,23 @@ input::placeholder
 }
 header
 {
-  background-color: red;
+  background-color: rgba(145, 207, 235, 0.3);
+  border:none;
+  border-radius:15px;
   padding:5px;
+  padding-left:15px;
+  box-shadow:0 15px 35px rgba(0 ,0, 0, 0.5);
+  border:1px solid rgba(255,255,255,0.07);
+  backdrop-filter: blur(10px);
+}
+h1
+{
+    color:white;
+    font-family:Delius, algerian;
+    transition: transform 0.5s ease-in-out;
+}
+h1:hover 
+{
+  transform: translateX(680px); 
+  cursor: pointer;
 }
