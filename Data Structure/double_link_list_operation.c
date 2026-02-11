@@ -90,14 +90,14 @@ void main()
     four->next2= NULL;
 
     traversalPointer(head);
-    // head= insertAtFirst(head, 88);
-    // printf("\nAfter inserting at first: \n");
-    // traversalPointer(head);
-    // printf("\nenter the position you want to enter:");
-    // scanf("%d",&pos);
-    // head= insertAtBtwn(pos,head, 91);
-    // printf("\nAfter inserting in between: \n");
-    // traversalPointer(head);
+    head= insertAtFirst(head, 88);
+    printf("\nAfter inserting at first: \n");
+    traversalPointer(head);
+    printf("\nenter the position you want to enter:");
+    scanf("%d",&pos);
+    head= insertAtBtwn(pos,head, 91);
+    printf("\nAfter inserting in between: \n");
+    traversalPointer(head);
     head= insertAtLast(head, 99);
     printf("\nAfter inserting at last: \n");
     traversalPointer(head);
