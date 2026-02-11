@@ -19,6 +19,31 @@ void traversalPointer(node *pt)
         temp= temp->next;
     }
 }
+void search(node *pt)
+{
+    int key=0;
+    int k=0;
+    printf("Enter the number you want to find:\n");
+    scanf("%d",&key);
+    node *temp= pt;
+    while(temp!=NULL)
+    {
+        if(key== temp->data)
+        {
+            k=1;
+            break;
+        }
+        temp= temp->next;
+    }
+    if(k==1)
+    {
+        printf("found\n");
+    }
+    else
+    {
+        printf("not found\n");
+    }
+}
 void main()
 {
     node *head1= (node *)malloc(sizeof(node));
@@ -43,7 +68,7 @@ void main()
     five->next= NULL;
     printf("Printing the first Linked List: \n");
     traversalPointer(head1);
-
+    printf("\n");
     head2->data= 70;
     head2->next= second;
     second->data= 80;
@@ -52,9 +77,11 @@ void main()
     third->next= NULL;
     printf("\nPrinting the second Linked List: \n");
     traversalPointer(head2);
-    printf("\nLink List after merging:\n");
+    printf("\n\nLink List after merging:\n");
     five->next=head2;
     traversalPointer(head1);
+    printf("\n");
+    search(head1);
     free(head1);
     free(head2);
     free(two);
@@ -63,5 +90,4 @@ void main()
     free(second);
     free(third);
     free(five);
-
 }
