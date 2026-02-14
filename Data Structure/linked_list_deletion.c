@@ -52,6 +52,39 @@ node* delete_btwn(node* pt,int index)
     pt= pt->next;
     free(ptr);
 }
+node* insertAtbtwn(node* head,int data,int index)  
+{
+    int i=0;
+    node* ptr;
+    node* str= head;
+    ptr= (node *)malloc(sizeof(node));
+    while(i!=(index-1))
+    {
+        str= str->next;
+        i++;
+    }
+    ptr->data= data;
+    ptr->next= str->next;
+    str->next= ptr; 
+    return head;
+}
+
+node* insertAtlast(node* head,int data)  
+{
+    node* ptr;
+    node* str= head;
+    ptr= (node *)malloc(sizeof(node));
+    
+
+    while(str->next!= NULL)
+    {
+        str= str->next;
+    }
+        ptr->data= data;
+        str->next= ptr;
+        ptr->next= NULL;
+    return head;
+}
 void main()
 {
     node* head;
@@ -75,9 +108,9 @@ void main()
     three->next= NULL;
 
     traversal(head);
-    //head=  first_node_delete(head);
-    //printf("After deletion:\n");
-    //traversal(head);
+    head=  first_node_delete(head);
+    printf("After deletion:\n");
+    traversal(head);
 
     head= delete_btwn(head,1);
     printf("After deletion:\n");
