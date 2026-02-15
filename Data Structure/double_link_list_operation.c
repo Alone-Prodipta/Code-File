@@ -6,7 +6,7 @@ typedef struct xy
     int data;
     struct xy *next2;
 }node;
-
+node *head= NULL;
 void traversalPointer(node *pt)
 {
     node *head= pt;
@@ -20,6 +20,27 @@ void traversalPointer(node *pt)
         }
         temp= temp->next2;
     }
+}
+node *createnode(node *head, int data)
+{
+    node *ptr= (node *)malloc(sizeof(node));
+    node *str;
+    ptr->data= data;
+    ptr->next1= NULL;
+    ptr->next2= NULL;
+
+    if(head == NULL)
+    {
+        return ptr;
+    }
+    str= head;
+    while(str->next2!= NULL)
+    {
+        str= str->next2;
+    }
+    str->next2= ptr;
+    ptr->next1= str;
+    return head;
 }
 node *insertAtFirst(node *head,int data)
 {
@@ -69,25 +90,14 @@ node *insertAtLast(node *head, int data)
 }
 void main()
 {
-    node *head=(node *)malloc(sizeof(node));
-    node *two=(node *)malloc(sizeof(node));
-    node *three=(node *)malloc(sizeof(node));
-    node *four=(node *)malloc(sizeof(node));
-    int pos=0;
-    head->data=45;
-    head->next2=two;
     
-    two->next1=head;
-    two->data=78;
-    two->next2= three;
-    
-    three->next1=two;
-    three->data=50;
-    three->next2= four;
-
-    four->next1=three;
-    four->data=48;
-    four->next2= NULL;
+    int pos=0,i=0,val=0;
+    printf("Enter the elements in the array:\n");
+    for(i=1;i<=5;i++)
+    {
+        scanf("%d",&val);
+        head = createnode(head,val);
+    }
 
     traversalPointer(head);
     head= insertAtFirst(head, 88);
@@ -102,8 +112,5 @@ void main()
     printf("\nAfter inserting at last: \n");
     traversalPointer(head);
     free(head);
-    free(two);
-    free(three);
-    free(four);
-
+    
 }

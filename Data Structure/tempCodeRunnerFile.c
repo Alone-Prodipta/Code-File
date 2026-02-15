@@ -2,8 +2,9 @@
 #include<stdlib.h>
 typedef struct xy
 {
+    struct xy *next2;
     int data;
-    struct xy *next;
+    struct xy *next1;
 }node;
 node *head= NULL;
 int n=0,pos=0;
@@ -63,41 +64,49 @@ node* delete_btwn(node* pt,int index)
 }
 node* insertAtfirst(node* head,int data)  
 {
-    node* ptr;
-    ptr= (node *)malloc(sizeof(node));
-    ptr->next= head;
-    ptr->data= data;
-    return ptr;
+    node *pt= (node *)malloc(sizeof(node));
+    pt->next1= NULL;
+    pt->next2= head;
+    pt->data= data;
+    if(head != NULL)
+    {
+        head->next1= pt;
+    }
+    return pt;
 }
 node* insertAtbtwn(node* head,int data,int index)  
 {
-    int i=0;
-    node* ptr;
-    node* str= head;
-    ptr= (node *)malloc(sizeof(node));
-    while(i!=(index-1))
+    int i=1;
+    node *ptr=(node *)malloc(sizeof(node));
+    node *temp= head;
+    while(i!=(loc-1))
     {
-        str= str->next;
+        temp= temp->next2;
         i++;
     }
+    ptr->next2= temp->next2;
     ptr->data= data;
-    ptr->next= str->next;
-    str->next= ptr; 
+    ptr->next1=temp;
+    temp->next2= ptr;
+    if(ptr->next2!= NULL)
+    {
+        ptr->next2->next1= ptr;
+    }
     return head;
 }
 
 node* insertAtlast(node* head,int data)  
 {
-    node* ptr;
-    node* str= head;
-    ptr= (node *)malloc(sizeof(node));
-    while(str->next!= NULL)
+    node *pt= (node *)malloc(sizeof(node));
+    node *temp= head;
+    while(temp->next2!=NULL)
     {
-        str= str->next;
+        temp= temp->next2;
     }
-        ptr->data= data;
-        str->next= ptr;
-        ptr->next= NULL;
+    pt->data= data;
+    pt->next2= NULL;
+    pt->next1= temp;
+    temp->next2= pt;
     return head;
 }
 void search(node *pt)
@@ -127,20 +136,23 @@ void search(node *pt)
 }
 node* createnode(node* head, int data) 
 {
-    node* ptr = (node*)malloc(sizeof(node));
-    ptr->data = data;
-    ptr->next = NULL;
+    node *ptr= (node *)malloc(sizeof(node));
+    node *str;
+    ptr->data= data;
+    ptr->next1= NULL;
+    ptr->next2= NULL;
 
-    if (head == NULL) {
-        return ptr;  // first node becomes head
-    }
-
-    node* str = head;
-    while (str->next != NULL) 
+    if(head == NULL)
     {
-        str = str->next;
+        return ptr;
     }
-    str->next = ptr;
+    str= head;
+    while(str->next2!= NULL)
+    {
+        str= str->next2;
+    }
+    str->next2= ptr;
+    ptr->next1= str;
     return head;
 }
 void main()
