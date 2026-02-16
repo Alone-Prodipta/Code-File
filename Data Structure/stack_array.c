@@ -72,7 +72,7 @@ void main()
         break;
         case 2:
         {
-            printf("POPing the last elements:\n");
+            pop:printf("POPing the last elements:\n");
             item= pr[s->top];
             s->top--;
             for(i=s->top;i>=0;i--)
@@ -102,6 +102,16 @@ void main()
             {
                 printf("|_%d_|\n",pr[i]);
             }
+            printf("Do you want to POP:\n");
+            scanf(" %c",&option);
+            if(option =='Y'||option=='y')
+            {
+                goto pop;
+            }
+            else
+            {
+                return;
+            }
         }
         break;
         default:
@@ -110,3 +120,5 @@ void main()
         }
     }
 }
+
+
