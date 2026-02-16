@@ -15,42 +15,56 @@ void traversal(node* pt)
 }
 node* delete_end(node* pt)
 {
+    if(pt == NULL)
+        return NULL;
+    if(pt->next == NULL)
+    {
+        free(pt);
+        return NULL;
+    }
     node* trav = pt;
     while(trav->next->next != NULL)
     {
         trav = trav->next;
     }
+    node* temp = trav->next;
     trav->next = NULL;
-    free(trav->next);
+    free(temp);
     return pt;
 }
 
 
 node* first_node_delete(node* pt)
 {
-    node* str= pt;
-    pt= pt->next;
+    if(pt == NULL)
+        return NULL;
+    node* str = pt;
+    pt = pt->next;
     free(str);
-    return(pt);
+    return pt;
 }
 node* delete_btwn(node* pt,int index)
 {
-    int i=0;
+    if(pt == NULL)
+        return NULL;
+    if(index <= 0)
+        return pt;
+    if(index == 1)
+        return first_node_delete(pt);
+
+    int i = 1;
     node* ptr = pt;
-    node* temp;   
-    while(i != (index-1))
+    while(i < index-1 && ptr->next != NULL)
     {
         ptr = ptr->next;
         i++;
     }
-    if( ptr->next != NULL)
-    {
-        temp = ptr->next;
-        ptr->next = temp->next;
-    }
+    if(ptr->next == NULL)
+        return pt; /* index out of range */
+    node* temp = ptr->next;
+    ptr->next = temp->next;
+    free(temp);
     return pt;
-    pt= pt->next;
-    free(ptr);
 }
 node* insertAtbtwn(node* head,int data,int index)  
 {

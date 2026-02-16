@@ -2,11 +2,13 @@
 #include<stdlib.h>
 typedef struct xy
 {
-    struct xy *next2;
+    struct xy *next;
     int data;
-    struct xy *next1;
+    struct xy *prev;
 }node;
 node *head= NULL;
+node *x;
+node *y;
 int n=0,pos=0;
 void traversal(node *pt)
 {
@@ -24,89 +26,113 @@ void traversal(node *pt)
 }
 node* delete_end(node* pt)
 {
-    if (!pt || !pt->next)
-        return pt;
-    node* trav = pt;
-    while(trav->next->next != NULL)
+    head= pt;
+    x= head;
+    while(x->next!= NULL)
     {
-        trav = trav->next;
+        x= x->next;
     }
-    free(trav->next);
-    trav->next = NULL;
-    return pt;
+    y= x->prev;
+    y->next= NULL;
+    return(head);
 }
 
 
 node* first_node_delete(node* pt)
 {
-    node* str= pt;
-    pt= pt->next;
-    free(str);
-    return(pt);
+   
+   
+   node *head= pt;
+   x=head->next;
+   x->prev= head;
+  
+//    if(y!= NULL)
+//    {
+//         y->prev= head;
+//    }
+   return(head);
 }
 node* delete_btwn(node* pt,int index)
 {
-    int i=0;
-    node* ptr = pt;
-    node* temp;   
-    while(i != (index-1))
-    {
-        ptr = ptr->next;
+     head= pt;
+   if (head == NULL || index <= 0) return head;
+   
+    Node* temp = head;
+    int i = 1;
+
+    // Traverse to the node at position 'index'
+    while (temp != NULL && i < index) {
+        temp = temp->next;
         i++;
     }
-    if( ptr->next != NULL)
-    {
-        temp = ptr->next;
-        ptr->next = temp->next;
-        free(temp);
+
+    // If index is out of bounds
+    if (temp == NULL) return head;
+
+    // If deleting the head node
+    if (temp->prev == NULL) {
+        head = temp->next;
+        if (head != NULL) head->prev = NULL;
+    } else {
+        temp->prev->next = temp->next;
+        if (temp->next != NULL) {
+            temp->next->prev = temp->prev;
+        }
     }
-    return pt;
+
+    free(temp);
+    return head;
+
 }
 node* insertAtfirst(node* head,int data)  
 {
-    node *pt= (node *)malloc(sizeof(node));
-    pt->next1= NULL;
-    pt->next2= head;
-    pt->data= data;
-    if(head != NULL)
-    {
-        head->next1= pt;
+    node *newnode= (node *)malloc(sizeof(node));
+    newnode->data= data;
+    newnode->prev = NULL;
+    newnode->next = head;
+
+    // If list is not empty, update previous head's prev pointer
+    if (head != NULL) {
+        head->prev = newnode;
     }
-    return pt;
+
+    // Move head to point to new node
+    head = newnode;
+
 }
 node* insertAtbtwn(node* head,int data,int index)  
 {
     int i=1;
-    node *ptr=(node *)malloc(sizeof(node));
+    node *newnode=(node *)malloc(sizeof(node));
     node *temp= head;
-    while(i!=(loc-1))
+    while(i!=(index-1))
     {
-        temp= temp->next2;
+        temp= temp->next;
         i++;
     }
-    ptr->next2= temp->next2;
-    ptr->data= data;
-    ptr->next1=temp;
-    temp->next2= ptr;
-    if(ptr->next2!= NULL)
+    newnode->next= temp->next;
+    newnode->data= data;
+    newnode->prev=temp;
+    temp->next= newnode;
+    if(newnode->next!= NULL)
     {
-        ptr->next2->next1= ptr;
+        newnode->next->prev= newnode;
     }
     return head;
 }
 
 node* insertAtlast(node* head,int data)  
 {
-    node *pt= (node *)malloc(sizeof(node));
+    node *newnode= (node *)malloc(sizeof(node));
     node *temp= head;
-    while(temp->next2!=NULL)
+    newnode->next= NULL;
+    while(temp->next!=NULL)
     {
-        temp= temp->next2;
+        temp= temp->next;
     }
-    pt->data= data;
-    pt->next2= NULL;
-    pt->next1= temp;
-    temp->next2= pt;
+    newnode->data= data;
+    newnode->prev= temp;
+    temp->next= newnode;
     return head;
 }
 void search(node *pt)
@@ -136,32 +162,32 @@ void search(node *pt)
 }
 node* createnode(node* head, int data) 
 {
-    node *ptr= (node *)malloc(sizeof(node));
+    node *newnode= (node *)malloc(sizeof(node));
     node *str;
-    ptr->data= data;
-    ptr->next1= NULL;
-    ptr->next2= NULL;
+    newnode->data= data;
+    newnode->prev= NULL;
+    newnode->next= NULL;
 
     if(head == NULL)
     {
-        return ptr;
+        return newnode;
     }
     str= head;
-    while(str->next2!= NULL)
+    while(str->next!= NULL)
     {
-        str= str->next2;
+        str= str->next;
     }
-    str->next2= ptr;
-    ptr->next1= str;
+    str->next= newnode;
+    newnode->prev= str;
     return head;
 }
 void main()
 {
-    node *head1= NULL;
+    node *head= NULL;
     node *temp;
     int ch=0,i=0,num=0,val=0;
     char choice;
-    node *head2= NULL;
+    
     printf("Enter how many nodes you need:\n");
     scanf("%d",&num);
 
@@ -169,43 +195,17 @@ void main()
     for(int i=1;i<=num;i++)
     {
         scanf("%d",&val);
-        head1 = createnode(head1, val);
+        head = createnode(head, val);
     }
-    temp= head1;
+    temp= head;
     printf("Printing the first Linked List: \n");
-    traversal(head1);
-    printf("\nEnter 1 to merge the list, Enter 2 to insert elemnets in the list,Enter 3 to delete elemnets in the list,Enter 4 to search,Enter 5 to reverse");
+    traversal(head);
+    printf("\n Enter 1 to insert elemnets in the list,Enter 2 to delete elemnets in the list,Enter 3 to search,Enter 4 to reverse");
     printf("Enter your choice:\n");
     scanf("%d",&ch);
     switch(ch)
     {
         case 1:
-        {
-            printf("Enter how many nodes you need:\n");
-            scanf("%d",&num);
-            node *str;
-            printf("Enter the data in the list\n");
-            for(i=1;i<=num;i++)
-            {
-                scanf("%d",&val);
-                head2 = createnode(head2, val);
-            }
-            str= head2;
-            printf("Printing the second Linked List: \n");
-            traversal(head2);
-            printf("\nMerging the list\n");
-            node* lastNode = head1;
-            while(lastNode->next != NULL)
-            {
-                lastNode = lastNode->next;
-            }
-           
-            lastNode->next = head2;
-            traversal(head1);
-            
-        }
-        break;
-        case 2:
         {
             printf("Enter F for inserting at front, B for inserting at between, enter E for inserting at end\n");
             printf("Enter your choice:\n");
@@ -214,8 +214,8 @@ void main()
             {
                 printf("Enter the value you want to enter:\n");
                 scanf("%d",&n);
-                insertAtfirst(head1,n);
-                traversal(head1);
+                insertAtfirst(head,n);
+                traversal(head);
             }
             else if(choice== 'B')
             {
@@ -223,15 +223,43 @@ void main()
                 scanf("%d",&n);
                 printf("Enter the position you want to delete:\n");
                 scanf("%d",&pos);
-                insertAtbtwn(head1,n,pos);
-                traversal(head1);
+                insertAtbtwn(head,n,pos);
+                traversal(head);
             }
             else if(choice== 'E')
             {
                 printf("Enter the value you want to enter:\n");
                 scanf("%d",&n);
-                insertAtlast(head1,n);
-                traversal(head1);
+                insertAtlast(head,n);
+                traversal(head);
+            }
+            else
+            {
+                printf("Wrong Choice");
+            }
+        }
+        break;
+        case 2:
+        {
+            printf("Enter F for deleting at front, B for deleting at between, enter E for deleting at end\n");
+            printf("Enter your choice:\n");
+            scanf(" %c",&choice);
+            if(choice== 'F')
+            {
+               first_node_delete(head);
+               traversal(head);
+            }
+            else if(choice== 'B')
+            {
+                printf("Enter the position you want to delete:\n");
+                scanf("%d",&pos);
+                delete_btwn(head,pos);
+                traversal(head);
+            }
+            else if(choice== 'E')
+            {
+                delete_end(head);
+                traversal(head);
             }
             else
             {
@@ -241,61 +269,30 @@ void main()
         break;
         case 3:
         {
-            printf("Enter F for deleting at front, B for deleting at between, enter E for deleting at end\n");
-            printf("Enter your choice:\n");
-            scanf("%c",&choice);
-            if(choice== 'F')
-            {
-               first_node_delete(head1);
-               traversal(head1);
-            }
-            else if(choice== 'B')
-            {
-                printf("Enter the position you want to delete:\n");
-                scanf("%d",&pos);
-                delete_btwn(head1,pos);
-                traversal(head1);
-            }
-            else if(choice== 'E')
-            {
-                delete_end(head1);
-                traversal(head1);
-            }
-            else
-            {
-                printf("Wrong Choice");
-            }
-        }
-        case 4:
-        {
-            search(head1);
+            search(head);
         }
         break;
-        case 5:
+        case 4:
         {
-            node *x=(node *)malloc(sizeof(node));
-            node *y=(node *)malloc(sizeof(node));
-            x= head1->next;
-            y= x->next;
-            head1->next= NULL;
-            while(y!=NULL)
+            
+            node *temp = NULL;
+            node *current = head;
+            while (current != NULL)
             {
-                x->next=NULL;
-                x->next= head1;
-                head1= x;
-                x= y;
-                y= x->next;
+                temp = current->prev;
+                current->prev = current->next;
+                current->next = temp;
+                current = current->prev; 
             }
-            x->next= head1;
-            head1= x;
-            traversal(head1);
+            if (temp != NULL) 
+            {
+                head= temp->prev;
+            }
+            traversal(head);
         }
     }
 
     printf("\n");
     free(temp);
-    free(str);
-    free(lastNode);
-    free(head1);
-    free(head2);
+    free(head);
 }

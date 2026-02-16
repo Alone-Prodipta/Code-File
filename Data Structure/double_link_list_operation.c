@@ -2,90 +2,91 @@
 #include<stdlib.h>
 typedef struct xy
 {
-    struct xy *next1;
+    struct xy *prev;
     int data;
-    struct xy *next2;
+    struct xy *next;
 }node;
 node *head= NULL;
-void traversalPointer(node *pt)
+void traversalPointer(node *newnode)
 {
-    node *head= pt;
+    node *head= newnode;
     node *temp= head;
     while(temp!= NULL)
     {
         printf("%d",temp->data);
-        if(temp->next2!=NULL)
+        if(temp->next!=NULL)
         {
             printf(" -> ");
         }
-        temp= temp->next2;
+        temp= temp->next;
     }
 }
 node *createnode(node *head, int data)
 {
-    node *ptr= (node *)malloc(sizeof(node));
+    node *newnode= (node *)malloc(sizeof(node));
     node *str;
-    ptr->data= data;
-    ptr->next1= NULL;
-    ptr->next2= NULL;
+    newnode->data= data;
+    newnode->prev= NULL;
+    newnode->next= NULL;
 
     if(head == NULL)
     {
-        return ptr;
+        return newnode;
     }
     str= head;
-    while(str->next2!= NULL)
+    while(str->next!= NULL)
     {
-        str= str->next2;
+        str= str->next;
     }
-    str->next2= ptr;
-    ptr->next1= str;
+    str->next= newnode;
+    newnode->prev= str;
     return head;
 }
 node *insertAtFirst(node *head,int data)
 {
-    node *pt= (node *)malloc(sizeof(node));
-    pt->next1= NULL;
-    pt->next2= head;
-    pt->data= data;
-    if(head != NULL)
+    node *newnode= (node *)malloc(sizeof(node));
+    newnode->prev= head;
+    head->prev= newnode;
+    newnode->data= data;
+    /*if(head != NULL)
     {
-        head->next1= pt;
-    }
-    return pt;
+        head= head->next;
+    }*/
+    head= newnode;
+    return head;
 }
 node *insertAtBtwn(int loc,node *head,int data)
 {
     int i=1;
-    node *ptr=(node *)malloc(sizeof(node));
+    node *newnode=(node *)malloc(sizeof(node));
     node *temp= head;
     while(i!=(loc-1))
     {
-        temp= temp->next2;
+        temp= temp->next;
         i++;
     }
-    ptr->next2= temp->next2;
-    ptr->data= data;
-    ptr->next1=temp;
-    temp->next2= ptr;
-    if(ptr->next2!= NULL)
+    newnode->next= temp->next;
+    newnode->data= data;
+    newnode->prev=temp;
+    temp->next= newnode;
+    if(newnode->next!= NULL)
     {
-        ptr->next2->next1= ptr;
+        newnode->next->prev= newnode;
     }
     return head;
 }
 node *insertAtLast(node *head, int data)
 {
-    node *pt= (node *)malloc(sizeof(node));
+    node *newnode= (node *)malloc(sizeof(node));
     node *temp= head;
-    while(temp->next2!=NULL)
+    while(temp->next!=NULL)
     {
-        temp= temp->next2;
+        temp= temp->next;
     }
-    pt->data= data;
-    pt->next2= NULL;
-    pt->next1= temp;
-    temp->next2= pt;
+    newnode->data= data;
+    newnode->next= NULL;
+    newnode->prev= temp;
+    temp->next= newnode;
     return head;
 }
 void main()
