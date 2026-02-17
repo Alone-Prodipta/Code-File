@@ -36,69 +36,53 @@ node* delete_end(node* pt)
     y->next= NULL;
     return(head);
 }
-
-
 node* first_node_delete(node* pt)
 {
-   
-   
-   node *head= pt;
-   x=head->next;
-   x->prev= head;
-  
-//    if(y!= NULL)
-//    {
-//         y->prev= head;
-//    }
-   return(head);
+    node *head= pt;
+    if (head == NULL)
+    {
+        return NULL;
+    }
+    node* temp = head;
+    temp = temp->next;
+    if (temp != NULL)
+    {
+        temp->prev = NULL;
+    }
+    free(temp);
 }
 node* delete_btwn(node* pt,int index)
 {
-     head= pt;
-   if (head == NULL || index <= 0) return head;
-   
-    Node* temp = head;
+    head= pt;
+  
+    node* temp = head;
     int i = 1;
-
-    // Traverse to the node at position 'index'
-    while (temp != NULL && i < index) {
+    while (temp != NULL && i < index) 
+    {
         temp = temp->next;
         i++;
     }
-
-    // If index is out of bounds
-    if (temp == NULL) return head;
-
-    // If deleting the head node
-    if (temp->prev == NULL) {
-        head = temp->next;
-        if (head != NULL) head->prev = NULL;
-    } else {
-        temp->prev->next = temp->next;
-        if (temp->next != NULL) {
-            temp->next->prev = temp->prev;
-        }
+    temp->prev->next = temp->next;
+    if (temp->next != NULL) 
+    {
+        temp->next->prev = temp->prev;
     }
-
     free(temp);
     return head;
-
 }
 node* insertAtfirst(node* head,int data)  
 {
+    node *temp= head;
     node *newnode= (node *)malloc(sizeof(node));
     newnode->data= data;
     newnode->prev = NULL;
-    newnode->next = head;
-
-    // If list is not empty, update previous head's prev pointer
-    if (head != NULL) {
-        head->prev = newnode;
+    newnode->next = temp;   
+    if (temp != NULL) 
+    {
+        temp->prev = newnode;
     }
-
-    // Move head to point to new node
-    head = newnode;
-
+    temp = newnode;
+    return temp;
 }
 node* insertAtbtwn(node* head,int data,int index)  
 {
@@ -291,7 +275,6 @@ void main()
             traversal(head);
         }
     }
-
     printf("\n");
     free(temp);
     free(head);
