@@ -213,7 +213,7 @@ void main()
             {
                 printf("Enter the value you want to enter:\n");
                 scanf("%d",&n);
-                printf("Enter the position you want to delete:\n");
+                printf("Enter the position you want to enter:\n");
                 scanf("%d",&pos);
                 insertAtbtwn(head,n,pos);
                 traversal(head);
