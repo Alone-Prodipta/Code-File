@@ -28,6 +28,9 @@ int isfull(stack *pt)
         return 0;
     }
 }
+
+
+
 void main()
 {
     stack *s=(stack*)malloc(sizeof(stack));
@@ -53,8 +56,13 @@ void main()
     }
         printf("stack overflows\n");
         printf("POPing the last elements:\n");
-        item= pr[s->top];
-        s->top--;
+       
+            item= pr[s->top];
+            
+            s->top--;
+           
+        
+        
         for(i=s->top;i>=0;i--)
         {
             printf("|_%d_|\n",pr[i]);
