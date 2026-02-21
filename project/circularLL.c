@@ -27,7 +27,7 @@ node *createnode(node *head, int data)
     newnode->next = NULL;
     if (head == NULL) 
     {
-        newnode->next = newnode; // Point to itself
+        newnode->next = newnode; 
         return newnode;
     } 
     else 
@@ -48,7 +48,6 @@ node *insertAtfirst(node *head,int data)
     newnode->data= data;
     if (head == NULL) 
     {
-        // First node in the list
         newnode->next = newnode;
         return newnode;
     }
@@ -116,7 +115,10 @@ node* delete_end(node* pt)
 node* first_node_delete(node* pt)
 {
     if(pt == NULL)
+    {
         return NULL;
+    }
+        
     node* str = pt;
     pt = pt->next;
     free(str);
@@ -125,12 +127,18 @@ node* first_node_delete(node* pt)
 node* delete_btwn(node* pt,int index)
 {
     if (pt == NULL || index <= 0)
+    {
         return pt;
-    if (index == 1) {
-        // Deleting the head node
+    }
+        
+    if (index == 1) 
+    {
         node *last = pt;
         while (last->next != pt)
-            last = last->next;
+        {
+             last = last->next;
+        }
+           
         node *temp = pt;
         pt = pt->next;
         last->next = pt;
@@ -138,10 +146,14 @@ node* delete_btwn(node* pt,int index)
         return pt;
     }
     node *curr = pt;
-    for (int i = 1; i < index - 1; i++) {
+    for (int i = 1; i < index - 1; i++) 
+    {
         curr = curr->next;
-        if (curr->next == pt) // index out of range
+        if (curr->next == pt) 
+        {
             return pt;
+        }
+            
     }
     node *temp = curr->next;
     curr->next = temp->next;
@@ -286,241 +298,12 @@ void main()
             head = prev;
             traversal(head);
         }
-    }
-}
-
-
-
-/*#include <stdio.h>
-#include <stdlib.h>
-
-typedef struct node
-{
-    int data;
-    struct node *next;
-    struct node *prev;
-} Node;
-
-Node *Head = NULL;
-static int count;
-void delete_front()
-{
-    if (Head == NULL)
-    {
-        printf("List is empty\n");
-        return;
-    }
-
-    Node *temp = Head;
-
-    // Case 1: Only one node
-    if (Head->next == Head)
-    {
-        int value = Head->data;
-        free(Head);
-        Head = NULL;
-        printf("%d Deleted from the list\n", value);
-        return;
-    }
-
-    // Case 2: More than one node
-    Node *last = Head;
-
-    // Find last node
-    while (last->next != Head)
-        last = last->next;
-
-    int value = Head->data;
-
-    Head = Head->next; // Move head forward
-    last->next = Head; // Maintain circular link
-
-    free(temp);
-
-    printf("%d Deleted from the list\n", value);
-}
-void insertEnd(int value)
-{
-    Node *newnode = (Node *)malloc(sizeof(Node)), *temp = Head;
-    if (newnode == NULL)
-    {
-        printf("Memory allocation failed");
-        return;
-    }
-    newnode->data = value;
-    if (temp == NULL)
-    {
-        Head = newnode;
-        newnode->next = Head;
-        newnode->prev = Head;
-        count++;
-    }
-    else
-    {
-        while (temp->next != Head)
-        {
-            temp = temp->next;
-        }
-        temp->next = newnode;
-        newnode->prev = temp;
-        newnode->next = Head;
-        count++;
-    }
-}
-void delete_position(int pos)
-{
-    Node *temp = Head, *deletenode;
-    if (pos > count)
-    {
-        printf("\nPosition not found ");
-        return;
-    }
-    int i;
-    if (Head == NULL)
-    {
-        printf("List is empty\n");
-        return;
-    }
-    if (pos == 1)
-    {
-        delete_front();
-        count--;
-        return;
-    }
-    for (i = 1; i <= pos - 2; i++)
-    {
-        temp = temp->next;
-    }
-    deletenode = temp->next;
-    temp->next = deletenode->next;
-    deletenode->next->prev = temp;
-    deletenode->next = NULL;
-    deletenode->prev = NULL;
-    printf("\n%d Delete from the list", deletenode->data);
-    count--;
-    free(deletenode);
-}
-void reverse()
-{
-    if (Head == NULL || Head->next == Head)
-        return;
-
-    Node *prev = NULL, *current = Head, *next = NULL;
-    Node *last = Head;
-
-    // Find last node
-    while (last->next != Head)
-        last = last->next;
-
-    do
-    {
-        next = current->next;
-        current->next = prev;
-        prev = current;
-        current = next;
-    } while (current != Head);
-
-    Head->next = prev;
-    Head = prev;
-
-    printf("List Reversed\n");
-
-    printf("List Reversed\n");
-}
-void search(int key)
-{
-    Node *temp = Head;
-    if (Head == NULL)
-    {
-        printf("List is empty\n");
-        return;
-    }
-
-    int pos = 1;
-
-    do
-    {
-        if (temp->data == key)
-        {
-            printf("Found at position %d\n", pos);
-            return;
-        }
-        temp = temp->next;
-        pos++;
-    } while (temp != Head);
-
-    printf("Not found\n");
-}
-void display()
-{
-    Node *temp = Head;
-    if (Head == NULL)
-    {
-        printf("List is empty\n");
-        return;
-    }
-    printf("\nDisplay list:- ");
-    printf("Head <-> ");
-    do
-    {
-        printf("%d <-> ", temp->data);
-        temp = temp->next;
-    } while (temp != Head);
-    printf(" Head\n");
-}
-int main()
-{
-    int choice, value;
-
-    while (1)
-    {
-        printf("\n--- MENU ---\n");
-        printf("1. Insert in List\n");
-        printf("2. Delete from List\n");
-        printf("3. Search in List\n");
-        printf("4. Display List\n");
-        printf("5. Reverse List\n");
-        printf("6. Exit\n");
-
-        printf("Enter your choice:- ");
-        scanf("%d", &choice);
-
-        switch (choice)
-        {
-        case 1:
-            printf("Enter value:- ");
-            scanf("%d", &value);
-            insertEnd(value);
-            break;
-
-        case 2:
-            printf("Enter position to delete:- ");
-            scanf("%d", &value);
-            delete_position(value);
-            break;
-
-        case 3:
-            printf("Enter value to search:- ");
-            scanf("%d", &value);
-            search(value);
-            break;
-
-        case 4:
-            display();
-            break;
-
-        case 5:
-            reverse();
-            break;
-
-        case 6:
-            printf("\nExiting...\n");
-            exit(1);
-
         default:
-            printf("Invalid choice\n");
+        {
+            printf("wrong choice");
         }
     }
-    free(Head);
-    return 0;
-}*/
+}
+
+
+
