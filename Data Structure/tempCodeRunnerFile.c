@@ -198,7 +198,7 @@ void main()
             {
                 printf("Enter the value you want to enter:\n");
                 scanf("%d",&n);
-                insertAtfirst(head,n);
+                head= insertAtfirst(head,n);
                 traversal(head);
             }
             else if(choice== 'B')
@@ -207,14 +207,14 @@ void main()
                 scanf("%d",&n);
                 printf("Enter the position you want to delete:\n");
                 scanf("%d",&pos);
-                insertAtbtwn(head,n,pos);
+                head= insertAtbtwn(head,n,pos);
                 traversal(head);
             }
             else if(choice== 'E')
             {
                 printf("Enter the value you want to enter:\n");
                 scanf("%d",&n);
-                insertAtlast(head,n);
+                head= insertAtlast(head,n);
                 traversal(head);
             }
             else
@@ -230,19 +230,19 @@ void main()
             scanf(" %c",&choice);
             if(choice== 'F')
             {
-               first_node_delete(head);
+               head= first_node_delete(head);
                traversal(head);
             }
             else if(choice== 'B')
             {
                 printf("Enter the position you want to delete:\n");
                 scanf("%d",&pos);
-                delete_btwn(head,pos);
+                head= delete_btwn(head,pos);
                 traversal(head);
             }
             else if(choice== 'E')
             {
-                delete_end(head);
+                head= delete_end(head);
                 traversal(head);
             }
             else
