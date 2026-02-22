@@ -23,31 +23,33 @@ void traversal(node *pt)
 }
 node* delete_end(node* pt)
 {
-    if (!pt || !pt->next)
-        return pt;
+    
     node* trav = pt;
     while(trav->next->next != NULL)
     {
         trav = trav->next;
     }
-    free(trav->next);
     trav->next = NULL;
     return pt;
 }
 
-node* first_node_delete(node* pt)
+node* first_node_delete(node* head)
 {
-    node* str= pt;
-    pt= pt->next;
+    if(head ==NULL)
+    {
+        return head;
+    }
+    node* str= head;
+    head= head->next;
     free(str);
-    return(pt);
+    return(head);
 }
 node* delete_btwn(node* pt,int index)
 {
     int i=0;
     node* ptr = pt;
     node* temp;   
-    while(i != (index-1))
+    while(i != (index-2))
     {
         ptr = ptr->next;
         i++;
@@ -56,17 +58,19 @@ node* delete_btwn(node* pt,int index)
     {
         temp = ptr->next;
         ptr->next = temp->next;
+    } 
         free(temp);
-    }
     return pt;
 }
 node* insertAtfirst(node* head,int data)  
 {
-    node* ptr;
+    node *ptr;
+    //node *pt= head;
     ptr= (node *)malloc(sizeof(node));
     ptr->next= head;
+    //ptr= ptr->next;
     ptr->data= data;
-    return ptr;
+    return head;
 }
 node* insertAtbtwn(node* head,int data,int index)  
 {
@@ -74,14 +78,15 @@ node* insertAtbtwn(node* head,int data,int index)
     node* ptr;
     node* str= head;
     ptr= (node *)malloc(sizeof(node));
-    while(i!=(index-1))
+    while(i!=(index-2))
     {
         str= str->next;
         i++;
     }
     ptr->data= data;
-    ptr->next= str->next;
+    ptr->next= str->next; 
     str->next= ptr; 
+   
     return head;
 }
 
@@ -200,7 +205,7 @@ void main()
             {
                 printf("Enter the value you want to enter:\n");
                 scanf("%d",&n);
-                insertAtfirst(head1,n);
+                head1= insertAtfirst(head1,n);
                 traversal(head1);
             }
             else if(choice== 'B')
@@ -209,14 +214,14 @@ void main()
                 scanf("%d",&n);
                 printf("Enter the position you want to delete:\n");
                 scanf("%d",&pos);
-                insertAtbtwn(head1,n,pos);
+                head1= insertAtbtwn(head1,n,pos);
                 traversal(head1);
             }
             else if(choice== 'E')
             {
                 printf("Enter the value you want to enter:\n");
                 scanf("%d",&n);
-                insertAtlast(head1,n);
+                head1= insertAtlast(head1,n);
                 traversal(head1);
             }
             else
@@ -229,17 +234,17 @@ void main()
         {
             printf("Enter F for deleting at front, B for deleting at between, enter E for deleting at end\n");
             printf("Enter your choice:\n");
-            scanf("%c",&choice);
+            scanf(" %c",&choice);
             if(choice== 'F')
             {
-               first_node_delete(head1);
+               head1= first_node_delete(head1);
                traversal(head1);
             }
             else if(choice== 'B')
             {
                 printf("Enter the position you want to delete:\n");
                 scanf("%d",&pos);
-                delete_btwn(head1,pos);
+                head1= delete_btwn(head1,pos);
                 traversal(head1);
             }
             else if(choice== 'E')
@@ -252,6 +257,7 @@ void main()
                 printf("Wrong Choice");
             }
         }
+        break;
         case 4:
         {
             search(head1);
@@ -259,8 +265,8 @@ void main()
         break;
         case 5:
         {
-            node *x=(node *)malloc(sizeof(node));
-            node *y=(node *)malloc(sizeof(node));
+            node *x;//=(node *)malloc(sizeof(node));
+            node *y;//=(node *)malloc(sizeof(node));
             x= head1->next;
             y= x->next;
             head1->next= NULL;
@@ -278,8 +284,8 @@ void main()
         }
     }
     free(temp);
-    free(str);
-    free(lastNode);
+    //free(str);
+    //free(lastNode);
    free(head1);
     free(head2);
 }
