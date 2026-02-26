@@ -265,8 +265,8 @@ void main()
         break;
         case 5:
         {
-            node *x;//=(node *)malloc(sizeof(node));
-            node *y;//=(node *)malloc(sizeof(node));
+            node *x;
+            node *y;
             x= head1->next;
             y= x->next;
             head1->next= NULL;
