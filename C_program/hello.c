@@ -39,9 +39,7 @@ node* first_node_delete(node* head)
     {
         return head;
     }
-    node* str= head;
     head= head->next;
-    free(str);
     return(head);
 }
 node* delete_btwn(node* pt,int index)
