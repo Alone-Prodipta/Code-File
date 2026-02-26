@@ -284,8 +284,7 @@ void main()
         }
     }
     free(temp);
-    //free(str);
-    //free(lastNode);
+    
    free(head1);
     free(head2);
 }
