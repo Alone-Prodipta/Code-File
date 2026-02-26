@@ -62,13 +62,14 @@ node* delete_btwn(node* pt,int index)
 }
 node* insertAtfirst(node* head,int data)  
 {
-    node *ptr;
-    //node *pt= head;
-    ptr= (node *)malloc(sizeof(node));
-    ptr->next= head;
-    //ptr= ptr->next;
-    ptr->data= data;
-    return head;
+    node *newnode= (node *)malloc(sizeof(node));
+    if(newnode== NULL)
+    {
+        return head;
+    }
+    newnode->data= val;
+    newnode->next= head;
+    return newnode;
 }
 node* insertAtbtwn(node* head,int data,int index)  
 {
@@ -133,7 +134,8 @@ node* createnode(node* head, int data)
     ptr->data = data;
     ptr->next = NULL;
 
-    if (head == NULL) {
+    if (head == NULL) 
+    {
         return ptr;  // first node becomes head
     }
 
