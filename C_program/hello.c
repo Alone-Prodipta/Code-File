@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-typedef struct xy
+typedef struct pointer
 {
     int data;
     struct xy *next;
@@ -69,6 +69,7 @@ node* insertAtfirst(node* head,int data)
     }
     newnode->data= val;
     newnode->next= head;
+    head= newnode;
     return newnode;
 }
 node* insertAtbtwn(node* head,int data,int index)  
