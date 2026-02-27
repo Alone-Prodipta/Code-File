@@ -3,7 +3,7 @@
 typedef struct pointer
 {
     int data;
-    struct xy *next;
+    struct pointer *next;
 }node;
 node *head= NULL;
 int n=0,pos=0;
