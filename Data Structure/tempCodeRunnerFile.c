@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
-typedef struct xy
+typedef struct pointer
 {
-    struct xy *next;
+    struct pointer *next;
     int data;
-    struct xy *prev;
+    struct pointer *prev;
 }node;
 node *head= NULL;
 node *x;
