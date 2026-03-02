@@ -60,7 +60,7 @@ node* delete_btwn(node* pt,int index)
         free(temp);
     return pt;
 }
-node* insertAtfirst(node* head,int data)  
+node* insertAtfirst(node* head,int val)  
 {
     node *newnode= (node *)malloc(sizeof(node));
     if(newnode== NULL)

@@ -27,37 +27,36 @@ void traversal(node *pt)
 node* delete_end(node* pt)
 {
     head= pt;
-    x= head;
+    node *x= head;
     while(x->next!= NULL)
     {
         x= x->next;
     }
-    y= x->prev;
+    node *y= x->prev;
     y->next= NULL;
     return(head);
 }
-node* first_node_delete(node* pt)
+node* first_node_delete(node* head)
 {
-    node *head= pt;
+    
     if (head == NULL)
     {
-        return NULL;
+        return head;
     }
-    node* temp = head;
-    temp = temp->next;
-    if (temp != NULL)
+    head = head->next;
+    if (head != NULL)
     {
-        temp->prev = NULL;
+        head->prev = NULL;
     }
-    free(temp);
+    return head;
 }
 node* delete_btwn(node* pt,int index)
 {
     head= pt;
   
     node* temp = head;
-    int i = 1;
-    while (temp != NULL && i < index) 
+    int i = 0;
+    while (temp != NULL)
     {
         temp = temp->next;
         i++;
@@ -86,10 +85,10 @@ node* insertAtfirst(node* head,int data)
 }
 node* insertAtbtwn(node* head,int data,int index)  
 {
-    int i=1;
+    int i=0;
     node *newnode=(node *)malloc(sizeof(node));
     node *temp= head;
-    while(i!=(index-1))
+    while(i!=(index-2))
     {
         temp= temp->next;
         i++;
@@ -104,6 +103,7 @@ node* insertAtbtwn(node* head,int data,int index)
     }
     return head;
 }
+
 
 node* insertAtlast(node* head,int data)  
 {
