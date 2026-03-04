@@ -73,7 +73,6 @@ node *delete_end(node *head)
 
     // temp is now the last node
     temp->prev->next = NULL;*/
-
     return head;
     free(temp);
 }
