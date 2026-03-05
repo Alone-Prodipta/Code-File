@@ -13,7 +13,7 @@ class pn_14
             temp= i-1;
             while(temp>=0&&ar[temp]>str)
             {
-                ar[temp+1]= ar[temp];
+                ar[temp+1]= ar[temp];//left shifted the datas
                 temp--;
             }
             ar[temp+1]= str;
