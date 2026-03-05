@@ -15,24 +15,28 @@ void traversal(node *pt)
         temp= temp->next;
     }
 }
-node* POP(node* pt)
+node *reversal(node *head)
 {
-    if(pt == NULL)
-        return NULL;
-    if(pt->next == NULL)
+    node *x= head;
+    node *y= NULL;
+    node *z= NULL;
+    while(x!= NULL)
     {
-        free(pt);
-        return NULL;
+        y= x->next;
+        x->next= z;
+        z=x;
+        x=y;
     }
-    node* trav = pt;
-    while(trav->next->next != NULL)
-    {
-        trav = trav->next;
-    }
-    node* temp = trav->next;
-    trav->next = NULL;
-    free(temp);
-    traversal(pt);
+    return z;
+}
+node* POP(node* head)
+{
+   if(head== NULL)
+   {
+        return head;
+   }
+   head= head->next;
+   return head;
 }
 node* createnode(node* head, int data) 
 {
@@ -104,6 +108,7 @@ void main()
         case 3:
         {
             display:printf("Displaying the stack\n");
+            head= reversal(head);
             traversal(head);
             printf("Do you want to POP:\n");
             scanf(" %c",&option);

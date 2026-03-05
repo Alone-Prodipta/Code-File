@@ -39,7 +39,7 @@ void main()
     s->arr= (int *)malloc(s->size* sizeof(int));
     printf("Enter the size of the stack\n");
     scanf("%d",&size);
-    pr=(int *)malloc(length*sizeof(int));
+    pr=(int *)malloc(size*sizeof(int));
     printf("Enter 1 to push the elements in the stack,2 to pop the elements in the array,3 to display the stack\n");
     printf("Enter your choice\n");
     scanf("%d",&ch);
