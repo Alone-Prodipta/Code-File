@@ -140,5 +140,4 @@ int main()
     cout<<"Printing the list\n";
     ll.traversal();
     return 0;
->>>>>>> 9aca6b553a9934d57105e5c0a4d0451e8f7d10c8
 }
