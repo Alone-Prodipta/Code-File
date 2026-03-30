@@ -47,5 +47,22 @@
         "FREQUENC (39).c": "c",
         "FREQUENC (4).c": "c"
     },
-    "C_Cpp.errorSquiggles": "disabled"
+    "C_Cpp.errorSquiggles": "disabled",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "My local server",
+            "username": "root",
+            "database": "pn_db",
+            "password": "Prodipta_007#"
+        }
+    ]
 }

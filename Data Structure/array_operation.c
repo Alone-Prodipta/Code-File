@@ -73,7 +73,7 @@ void main()
 			{
 				break;
 			}
-			if(op!='y'||op!='Y')
+			if(op!='y'&&op!='Y')
 			{
 				goto start;
 			}	
@@ -159,7 +159,7 @@ int search(int list[])
         }
         case 'L':
         {
-            for(i=0;i<=size;i++)
+            for(i=0;i<size;i++)
             {
                 if(find==list[i])
                 {
@@ -169,7 +169,7 @@ int search(int list[])
             }
             if(flag==1)
             {
-                printf("Number found at position: %d",mid);
+                printf("Number found at position: %d",i);
             }
             else
             {
@@ -187,7 +187,7 @@ int search(int list[])
 int sort(int list[])
 {
     char a,ch;
-    int j=0,temp_str=0;
+    int j=0,temp_str=0,temp=0,ptr=0;
     printf("press 'A' for Ascending arrangemrnt and 'D' for descending arrangment\n");
     scanf(" %c",&a);
     if(a=='A'||a=='a')
@@ -215,11 +215,54 @@ int sort(int list[])
                     printf("%d ",list[i]);
                 }
             }
+            break;
+            case 'I':
+            {
+               
+                for(i=1;i<size;i++)
+                {
+                    temp= list[i];
+                    ptr= i-1;
+                    while(ptr>=0 && list[ptr]>temp)
+                    {
+                        list[ptr+1]= list[ptr];
+                        ptr--;
+                    }
+                    list[ptr+1]= temp;
+                }
+                for(i=0;i<size;i++)
+                {
+                    printf("%d ",list[i]);
+                }
+            }
+            break;
+            case 'S':
+            {
+                int min=0,str=0;
+                for(i=0;i<(size-1);i++)
+                {
+                    min=i;
+                    for(j=i+1;j<size;j++)
+                    {
+                        if(list[j]<list[min])
+                        {
+                            min=j;
+                        }
+                    }
+                    str= list[i];
+                    list[i]= list[min];
+                    list[min]= str;
+                }
+                for(i=0;i<size;i++)
+                {
+                    printf("%d ",list[i]);
+                }
+            }
         }
     }
     else if(a=='D'||a=='d')
     {
-        printf("Press 'B' for Bubble sort,Press 'S' for Selection sort,Press 'I' for Insertion sort,\nPress 'H' for Heap sort,Press 'Q' for Quick sort,Press 'M' for Merge sort,\nPress 'R' for Radix sort,Press 'C' for Counting sort,Press 'O' for Bucket sort,\nPress 'P' for Shell sort\n");
+        printf("Press 'B' for Bubble sort,Press 'S' for Selection sort,Press 'I' for Insertion sort");
         scanf(" %c",&ch);
         switch(toupper(ch))
         {
@@ -242,6 +285,49 @@ int sort(int list[])
                     printf("%d ",list[i]);
                 }
             }
+            break;
+            case 'I':
+            {
+               
+                for(i=1;i<size;i++)
+                {
+                    temp= list[i];
+                    ptr= i-1;
+                    while(ptr>=0 && list[ptr]<temp)
+                    {
+                        list[ptr+1]= list[ptr];
+                        ptr--;
+                    }
+                    list[ptr+1]= temp;
+                }
+                for(i=0;i<size;i++)
+                {
+                    printf("%d ",list[i]);
+                }
+            }
+            break;
+            case 'S':
+            {
+                int min=0,str=0;
+                for(i=0;i<(size-1);i++)
+                {
+                    min=i;
+                    for(j=i+1;j<size;j++)
+                    {
+                        if(list[j]>list[min])
+                        {
+                            min=j;
+                        }
+                    }
+                    str= list[i];
+                    list[i]= list[min];
+                    list[min]= str;
+                }
+                for(i=0;i<size;i++)
+                {
+                    printf("%d ",list[i]);
+                }
+            }
         }
     }
     else
@@ -249,22 +335,37 @@ int sort(int list[])
         printf("Wrong choice");
     }
 }
-int merge(int list1[],int list2[])
-{
-    int list3[100],j=0,m=0;
-    for(i=0;i<size;i++)
-    {
-        list3[i]=list1[i];
-    }
-    for(j=0;j<len;j++)
-    {
-        list3[i+j]=list2[j];
-    }
-    printf("The merged array is:\n");
-    for(m=0;m<(i+j);m++)
-    {
-        printf("%d ",list3[m]);
-    }
-}
 
+int merge(int list1[], int list2[])
+{
+    int merged[100], i=0, j=0, k=0;
     
+    while(i < size && j < len)
+    {
+        if(list1[i] < list2[j])
+        {
+            merged[k++] = list1[i++];
+        }
+        else
+        {
+            merged[k++] = list2[j++];
+        }
+    }
+    
+    while(i < size)
+    {
+        merged[k++] = list1[i++];
+    }
+    
+    while(j < len)
+    {
+        merged[k++] = list2[j++];
+    }
+    
+    printf("Merged Array:\n");
+    for(i=0; i<k; i++)
+    {
+        printf("%d ", merged[i]);
+    }
+    return 0;
+}

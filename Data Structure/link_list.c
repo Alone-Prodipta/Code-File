@@ -1,62 +1,81 @@
-#include<stdio.h>
-#include<stdlib.h>
-#define size 5;
+#include <stdio.h>
+#include <stdlib.h>
+
+// Define node structure
 struct node 
 {
     int data;
     struct node* next;
 };
-void traversalPointer(struct node *pt);
-void traversalPointer(struct node *pt)
+
+// Function to traverse and print the list
+void traversalPointer(struct node* head) 
 {
-    while(pt!= NULL)
+    struct node* temp = head;
+    while (temp != NULL) 
     {
-        printf("Element: %d\n",pt->data);
-        pt= pt->next;
+        printf("%d -> ", temp->data);
+        temp = temp->next;
     }
+    printf("NULL\n");
 }
 
-void main()
+int main()
 {
-    struct node* head;
-    struct node* secd;
-    struct node* thrd;
-    struct node* frth;
+    struct node* head = NULL;
+    struct node* temp = NULL;
+    struct node* tail = NULL;
 
-    //allocated in the heap as  the memory is dynamically allocated
-    head= (struct node *)malloc(sizeof(struct node));
-    secd= (struct node *)malloc(sizeof(struct node));
-    thrd= (struct node *)malloc(sizeof(struct node));
-    frth= (struct node *)malloc(sizeof(struct node));
+    int n, i;
+    printf("Enter number of nodes: ");
+    scanf("%d", &n);
 
-    //linking head with the second node
-    
-    head->data= 45;
-    head->next= secd;
+    // Create nodes using a loop
+    for (i = 0; i < n; i++) 
+     {
+        temp = (struct node*)malloc(sizeof(struct node));
+        if (temp == NULL) 
+        {
+            printf("Memory allocation failed\n");
+            return 1;
+        }
 
-    //linking second with the third node
-    
-    secd->data= 68;
-    secd->next= thrd;
+        // Assign data (example: multiples of 10)
+        scanf("%d",temp->data);
+        temp->next = NULL;
 
-    //linking third with the fourth node
-    
-    thrd->data= 53;
-    thrd->next= frth;
+        if (head == NULL) 
+        {
+            head = temp;   // first node
+            tail = temp;
+        } 
+        else 
+        {
+            tail->next = temp;  // link new node
+            tail = temp;        // move tail forward
+        }
+    }
 
-    //linking fourth with the NULL
-    
-    frth->data= 76;
-    frth->next= NULL;
-
-    //Printing the linked list
+    // Print linked list
     traversalPointer(head);
 
-    //free memory
+    // Free memory
+    temp = head;
+    while (temp != NULL)
+    {
+        struct node* nextNode = temp->next;
+        free(temp);
+        temp = nextNode;
+    }
 
-    free(head);
-    free(secd);
-    free(thrd);
-    free(frth);
-    
+    return 0;
 }
+
+
+
+
+
+
+
+
+
