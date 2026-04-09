@@ -12,7 +12,7 @@ select.forEach(function(box)
         {
            body.style.backgroundColor="white";
         }
-         if(e.target.id == "black")
+        if(e.target.id == "black")
         {
             body.style.backgroundColor="black";            
         }
