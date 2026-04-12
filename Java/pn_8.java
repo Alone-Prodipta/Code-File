@@ -2,7 +2,7 @@
 import java.util.*;
 class pn_8
 {
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         String word;
         int len=0,i=0,j=0;

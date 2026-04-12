@@ -3,7 +3,7 @@
 import java.util.*;
 class pn_7
 {
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         int num1=0,num2=0;
         Scanner my= new Scanner(System.in);

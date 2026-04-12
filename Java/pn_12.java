@@ -41,7 +41,7 @@ void GP()
     }
     System.out.print("\nThe sum of the GP sreies is: "+sum);
 }
-    public static void main(String args[])
+    public static void main(String[] args)
     { 
         Scanner my= new Scanner(System.in);
         char ch;

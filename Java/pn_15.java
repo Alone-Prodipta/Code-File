@@ -1,7 +1,7 @@
 import java.util.*;
 class pn_15
 {
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         Scanner my= new Scanner(System.in);
         int n=0,i=0,pos=0,ele=0;

@@ -2,7 +2,7 @@
 import java.util.*;
 class pn_14
 {
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         Scanner my= new Scanner(System.in);
         int ar[]= {40,50,12,80,99,42,60};

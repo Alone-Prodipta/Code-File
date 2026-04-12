@@ -2,7 +2,7 @@
 import java.util.*;
 class pn_6
 {
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         int num1=0,num2=0,max=0,min=0,temp=0,rem=0;
         Scanner my= new Scanner(System.in);

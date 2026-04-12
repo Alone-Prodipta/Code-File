@@ -5,7 +5,7 @@ class pn_2
 {
     /*Creating main() as publiclly fixed(static) which will return nothing*/
     /*making public mean any one can access the code including the compiler.*/
-    public static void main(String args[])//Very important command in java programming.
+    public static void main(String[] args)//Very important command in java programming.
     {
         int num=0;
         //Creating a scanner object as 'my' of class Scanner.

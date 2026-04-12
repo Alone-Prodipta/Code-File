@@ -1,7 +1,7 @@
 import java.util.*;
 class pn_11
 {
-    public static void main(String args[]) 
+    public static void main(String[] args) 
     {
         String sen,word;
         int i=0,j=0,end=0,flag=0,len=0,wrd=0,k=0;
