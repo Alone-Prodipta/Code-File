@@ -30,7 +30,10 @@
             console.log("hitesh",Date.now());
         };
         count= function(){
-            setInterval(time,2000);
+            if(!count)
+            {
+                count= setInterval(time,2000);
+            }  
         }
         //clearInterval(interval);
         const start= document.querySelector("#start");
@@ -38,6 +41,7 @@
         const end= document.querySelector("#stop");
         end.addEventListener("click",function(){
             clearInterval(count);
+            count= null;
             console.log("terminated");
         });
 
