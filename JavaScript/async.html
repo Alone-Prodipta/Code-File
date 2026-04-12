@@ -7,11 +7,40 @@
 </head>
 <body style="background-color: black;">
     <h1 style="color: white">Async/Await Example</h1>
-    <button id="stop">Click Me</button>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
     <script>
-        setTimeout(function(){
+        /*let reference= function(){
             console.log("hellow");
-        },2000);
+        }
+        //setTimeout(reference,2000);
+        const prodipta= function()
+        {
+            document.querySelector("h1").innerHTML= "Async project";
+        }
+        const changeMe= setTimeout(prodipta,2000);
+        document.querySelector("#stop");
+        addEventListener("click",function(){
+            clearTimeout(changeMe);
+            console.log("Terminated");
+        })*/
+       let count;
+        const time= function()
+        {
+            console.log("hitesh",Date.now());
+        };
+        count= function(){
+            setInterval(time,2000);
+        }
+        //clearInterval(interval);
+        const start= document.querySelector("#start");
+        start.addEventListener("click",count);
+        const end= document.querySelector("#stop");
+        end.addEventListener("click",function(){
+            clearInterval(count);
+            console.log("terminated");
+        });
+
     </script>
 </body>
 </html>
