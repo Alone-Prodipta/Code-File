@@ -383,4 +383,4 @@ dishes.forEach((item, index, arr)=>
 //DOM manipulation & NodeList..(Document Object Model)
 /**/
 /**************************************************************************/
-/*setTimeout(function(), time_in_milliseconds); -->used to execute a function after a certain time.*/
+/**setTimeout(function(), time_in_milliseconds); -->used to execute a function after a certain time.*/
