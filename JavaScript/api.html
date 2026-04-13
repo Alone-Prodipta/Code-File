@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="api.css">
 </head>
-<body style="background-color: black;">
+<body style="background-color: white;">
+    <div class="card">
+        <img alt="image not avilable">
+        <p>Followers:</p>
+        <h3 id="follower"></h3>
+        <p>Repository:</p>
+        <h3 id="repository"></h3>
+    </div>
+
+
+
+
+
+
 <script>
     const api= "https://api.github.com/users/hiteshchoudhary";
     const xhr= new XMLHttpRequest();
@@ -15,8 +29,13 @@
         if(xhr.readyState === 4)
         {
             const data= JSON.parse(this.responseText);
-            console.log(typeof(data));
-            console.log(data.public_repos);
+            //console.log(data);
+            const avatar= document.querySelector("img");
+            const repos= document.getElementById("repository");
+            const follower= document.getElementById("follower");
+            follower.innerText= data.followers; 
+            repos.innerText= data.public_repos;
+            avatar.src= data.avatar_url;
         }
     }
     //console.log("calling!!");
