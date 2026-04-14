@@ -443,7 +443,3 @@ const promisefour= new Promise(function(resolve, reject){
     },1000);
 });
 
-promisefour.then(person)=>{
-    console.log(person);
-    
-}
