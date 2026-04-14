@@ -352,7 +352,7 @@ dishes.forEach(function greeting(item)
 });
 dishes.forEach((item, index, arr)=> 
 {
-    console.log(item, index, arr);
+    //console.log(item, index, arr);
 });
 
 
@@ -383,4 +383,67 @@ dishes.forEach((item, index, arr)=>
 //DOM manipulation & NodeList..(Document Object Model)
 /**/
 /**************************************************************************/
-/**setTimeout(function(), time_in_milliseconds); -->used to execute a function after a certain time.*/
+/**setTimeout(function(), time_in_milliseconds); -->used to execute a function after a certain time.
+ * setTimeInterval(function(), time_in_milliseconds)
+*/
+/**************************************************************************/
+//Promise()
+const promiseone= new Promise(function(resolve, reject){
+    //do an async task 
+    // database calls, cryptography, network call
+    setTimeout(function(){
+        //console.log("display promise");
+        resolve();// this line is very important, it connects the consumption module wi th the promise() module.
+    },1000);
+});     //--->it takes a callback in it.
+
+//promise() consumption
+
+/*Then keyword is directly connected with the resolve argument*/
+
+promiseone.then(function(){
+    //console.log("promise consumed");
+});
+
+//----------------------------------
+
+new Promise(function(resolve, reject){
+    setTimeout(function(){
+        //console.log("calling promise 2");
+        resolve();
+    })
+}).then(function(){
+    //console.log("async resolve");
+});
+
+//-----------------------------------
+
+const promisethree= new Promise(function(resolve, reject){
+    setTimeout(function(){
+        resolve({person:"Prodipta",email:"pro@gmail.com"})
+    },1000);
+});
+promisethree.then(function(person){
+    console.log(person);
+});
+
+//-----------------------------------
+
+const promisefour= new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error= true;
+        if(!error)
+        {
+            resolve({person:"Aheri halder",email_id:"halder@gmail.com"});
+        }
+        else
+        {
+            reject("ERROR: something is invalid");
+        }
+    },1000);
+});
+
+promisefour.then(person)=>{
+    console.log(person);
+    
+}
