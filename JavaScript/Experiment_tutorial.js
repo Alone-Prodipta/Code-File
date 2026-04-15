@@ -387,13 +387,16 @@ dishes.forEach((item, index, arr)=>
  * setTimeInterval(function(), time_in_milliseconds)
 */
 /**************************************************************************/
-//Promise()
+
+//Promise()--> It is an object.
+
 const promiseone= new Promise(function(resolve, reject){
     //do an async task 
     // database calls, cryptography, network call
     setTimeout(function(){
         //console.log("display promise");
-        resolve();// this line is very important, it connects the consumption module wi th the promise() module.
+        resolve();
+        // this line is very important, it connects the consumption module wi th the promise() module.
     },1000);
 });     //--->it takes a callback in it.
 
@@ -423,6 +426,9 @@ const promisethree= new Promise(function(resolve, reject){
         resolve({person:"Prodipta",email:"pro@gmail.com"})
     },1000);
 });
+
+//promise() consumption
+
 promisethree.then(function(person){
     console.log(person);
 });
@@ -443,3 +449,77 @@ const promisefour= new Promise(function(resolve, reject){
     },1000);
 });
 
+//promise() consumption
+
+promisefour.then((user)=> {
+    //console.log(user);
+    return user.username;
+})
+.then((username)=>{
+    //console.log(username);
+})
+.catch(function(error){
+    //console.log(error);
+})
+//.finally(()=> console.log("promise is either resolved or rejected"));
+
+//-------------------------ERROR HANDLING BY ASYNC AWAIT WITH TRY CATCH FUNCTION-------------------// 
+const promisefive= new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let err= true;
+        if(!err)
+        {
+            resolve({consumer:"Adipta Santra",password:"451fff"});
+        }
+        else
+        {
+            reject("Error: LOL!!!!");
+        }
+    },1000);
+});
+
+//promise() consumption
+
+async function consume() 
+{
+    /*const response= await promisefive;    
+    console.log(response);*/
+    try 
+    {
+        const response= await promisefive;    
+        console.log(response);
+    } 
+    catch (err) 
+    {
+        console.log(err);
+    }
+}
+consume();
+/**************************************************************************/
+
+//fetch()--> 
+
+/*async function getusers()
+{
+   try 
+   {
+        const response= await fetch("https://jsonplaceholder.typicode.com/users");
+        //console.log(response);
+        const data= await response.json();
+        console.log(data);
+   } 
+   catch (err) 
+   {
+        console.log("ERROR: lolLOL!!!", err);
+   }
+}
+getusers();*/
+
+
+fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
+        return response.json();
+})
+.then((data)=>{
+    console.log(data);
+})
+.catch((error)=>console.log(error));
