@@ -5,7 +5,7 @@ class pn_16
     public static void main(String[] args)
     {
         Scanner my= new Scanner(System.in);
-        float celcius=0, farenhite=0; 
+        float celcius=0.0f, farenhite=0.0f; 
         int ch=0;
         System.out.println("Enter one for converting in farenhite and 2 for converting in celcius:");
         System.out.println("Enter your choice:");
