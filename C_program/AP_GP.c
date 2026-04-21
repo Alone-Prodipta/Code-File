@@ -24,7 +24,7 @@ void main()
         break;
         default:
         {
-            printf("Wrong Choice.");
+            printf("Wrong Choice");
         }
     }
     system("pause");
