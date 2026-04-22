@@ -3,7 +3,7 @@
 void AP();
 void GP();
 int power(int base,int m);
-int sum=0;//Using global variable
+int sum=0;   //Using global variable
 void main()
 {
     char ch;
