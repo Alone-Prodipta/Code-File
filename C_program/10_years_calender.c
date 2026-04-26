@@ -318,7 +318,7 @@ void main()
     {
         int choice= 0;
         printf("Calendar from 2026 to 2036\n");
-        printf("Enter your choice:\n");
+        printf("Enter the year you want to see:\n");
         scanf("%d", &choice);
         switch (choice) 
         {
