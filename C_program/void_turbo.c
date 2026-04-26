@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 // Print a month with 31 days
 int date_31(int c, int start_day, int data[6][7]) 
 {
@@ -40,11 +40,51 @@ int date_30(int c, int start_day, int data[6][7])
     {
         for (j = start_day; j < 7; j++) 
         {
-            if (c < 10) printf(" 0%d  ", c);
-            else printf(" %d  ", c);
+            if (c < 10)
+            {
+                printf(" 0%d  ", c);
+            } 
+            else 
+            {
+                printf(" %d  ", c);
+            }
             data[i][j] = c;
             c++;
-            if (c > 30) {
+            if (c > 30) 
+            {
+                printf("\n");
+                return (j + 1) % 7;
+            }
+        }
+        printf("\n");
+        start_day = 0;
+    }
+    return 0;
+}
+// Print February (leap year, 29 days)
+int leap_feb(int c, int start_day, int data[6][7])
+{
+    int i, j;
+    for (j = 0; j < start_day; j++)
+    {
+        printf("     ");
+    }
+    for (i = 0; i < 5; i++)
+    {
+        for (j = start_day; j < 7; j++)
+        {
+            if (c < 10)
+            {
+                printf(" 0%d  ", c);
+            }
+            else
+            {
+                printf(" %d  ", c);
+            }
+            data[i][j] = c;
+            c++;
+            if (c > 29)
+            {
                 printf("\n");
                 return (j + 1) % 7;
             }
@@ -56,18 +96,29 @@ int date_30(int c, int start_day, int data[6][7])
 }
 
 // February (non-leap year, 28 days)
-int feb(int c, int start_day, int data[6][7]) {
+int feb(int c, int start_day, int data[6][7]) 
+{
     int i, j;
-    for (j = 0; j < start_day; j++) {
+    for (j = 0; j < start_day; j++) 
+    {
         printf("     ");
     }
-    for (i = 0; i < 5; i++) {
-        for (j = start_day; j < 7; j++) {
-            if (c < 10) printf(" 0%d  ", c);
-            else printf(" %d  ", c);
+    for (i = 0; i < 5; i++) 
+    {
+        for (j = start_day; j < 7; j++) 
+        {
+            if (c < 10) 
+            {
+                printf(" 0%d  ", c);
+            }
+            else 
+            {
+                printf(" %d  ", c);
+            }
             data[i][j] = c;
             c++;
-            if (c > 28) {
+            if (c > 28) 
+            {
                 printf("\n");
                 return (j + 1) % 7;
             }
@@ -77,11 +128,17 @@ int feb(int c, int start_day, int data[6][7]) {
     }
     return 0;
 }
-typedef struct list {
+typedef struct list 
+{
     int data[6][7];
 } node;
 
-void print_year(int c, int start_day,int data[6][7])
+int is_leap_year(int year)
+{
+    return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+}
+
+void print_year(int c, int start_day, int data[6][7], int year)
 {
     node january, february, march, april, may, june, july, august, september, october, november, december;
     for (int i = 1; i <= 12; i++) 
@@ -107,7 +164,10 @@ void print_year(int c, int start_day,int data[6][7])
                 start_day = date_31(c, start_day, january.data); 
                 break;
             case 2:  
-                start_day = feb(c, start_day, february.data); 
+                if (is_leap_year(year))
+                    start_day = leap_feb(c, start_day, february.data);
+                else
+                    start_day = feb(c, start_day, february.data);
                 break;
             case 3:  
                 start_day = date_31(c, start_day, march.data); 
@@ -143,13 +203,12 @@ void print_year(int c, int start_day,int data[6][7])
 }
 void year_2026() {
     int c, start_day;
-    
 
     printf("......2026......\n");
 
     c = 1;
     start_day = 4; 
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2026);
 }
     
 void year_2027() {
@@ -159,7 +218,7 @@ void year_2027() {
 
     c = 1;
     start_day = 5; // January 1, 2027 will be Friday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2027);
     
 }
 void year_2028() {
@@ -169,7 +228,7 @@ void year_2028() {
 
     c = 1;
     start_day = 6; // January 1, 2028 will be Saturday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2028);
     
 }
 void year_2029() {
@@ -179,7 +238,7 @@ void year_2029() {
 
     c = 1;
     start_day = 0; // January 1, 2029 will be Sunday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2029);
     
 }
 void year_2030() {
@@ -189,7 +248,7 @@ void year_2030() {
 
     c = 1;
     start_day = 2; // January 1, 2030 will be Tuesday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2030);
     
 }
 void year_2031() {
@@ -199,7 +258,7 @@ void year_2031() {
 
     c = 1;
     start_day = 3; // January 1, 2031 will be Wednesday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2031);
     
 }
 void year_2032() {
@@ -209,7 +268,7 @@ void year_2032() {
 
     c = 1;
     start_day = 4; // January 1, 2032 will be Thursday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2032);
     
 }
 void year_2033() {
@@ -219,7 +278,7 @@ void year_2033() {
 
     c = 1;
     start_day = 5; // January 1, 2033 will be Friday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2033);
     
 }
 void year_2034() {
@@ -229,7 +288,7 @@ void year_2034() {
 
     c = 1;
     start_day = 6; // January 1, 2034 will be Saturday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2034);
     
 }
 void year_2035() {
@@ -239,7 +298,7 @@ void year_2035() {
 
     c = 1;
     start_day = 0; // January 1, 2035 will be Sunday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2035);
     
 }
 void year_2036() {
@@ -249,52 +308,70 @@ void year_2036() {
 
     c = 1;
     start_day = 2; // January 1, 2036 will be Tuesday
-    print_year(c, start_day, NULL);
+    print_year(c, start_day, NULL, 2036);
     
 }
 void main() 
 {
-    int choice;
-    printf("Calendar from 2026 to 2036\n");
-    printf("Enter your choice:\n");
-    scanf("%d", &choice);
-    switch (choice) 
+    char op;
+    do
     {
-        case 2026:
-            year_2026();
-            break;
-        case 2027:
-            year_2027();
-            break;
-        case 2028:
-            year_2028();
-            break;
-        case 2029:
-            year_2029();
-            break;
-        case 2030:
-            year_2030();
-            break;
-        case 2031:
-            year_2031();
-            break;
-        case 2032:
-            year_2032();
-            break;
-        case 2033:
-            year_2033();
-            break;
-        case 2034:
-            year_2034();
-            break;
-        case 2035:
-            year_2035();
-            break;
-        case 2036:
-            year_2036();
-            break;
-        default:
-            printf("Invalid choice. Please enter a year between 2026 and 2036.\n");
+        int choice= 0;
+        printf("Calendar from 2026 to 2036\n");
+        printf("Enter your choice:\n");
+        scanf("%d", &choice);
+        switch (choice) 
+        {
+            case 2026:
+                year_2026();
+                break;
+            case 2027:
+                year_2027();
+                break;
+            case 2028:
+                year_2028();
+                break;
+            case 2029:
+                year_2029();
+                break;
+            case 2030:
+                year_2030();
+                break;
+            case 2031:
+                year_2031();
+                break;
+            case 2032:
+                year_2032();
+                break;
+            case 2033:
+                year_2033();
+                break;
+            case 2034:
+                year_2034();
+                break;
+            case 2035:
+                year_2035();
+                break;
+            case 2036:
+                year_2036();
+                break;
+            default:
+                printf("Invalid choice. Please enter a year between 2026 and 2036.\n");
+        }
+        printf("Do you want to continue?\n");
+		printf("Press 'y' for 'yes' and 'n' for 'no'\n");
+		scanf(" %c",&op);
+		fflush(stdin);
+		if(op=='n'||op=='N')
+		{
+			break;
+		}
+		if(op!='y'||op!='Y')
+		{
+			int k=0;
+		}	
     }
-   
-}
+    while(op=='y'||op=='Y');
+    printf("You have exited!\n");
+	system("pause");
+}   
