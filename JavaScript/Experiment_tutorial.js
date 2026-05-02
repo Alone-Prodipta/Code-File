@@ -499,7 +499,13 @@ consume();
 /**************************************************************************/
 
 //fetch()--> 
-
+options= {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '096cecc092mshae29a1f757ae4e4p116439jsna73679860a59',
+        'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+    }
+}
 /*async function getusers()
 {
    try 
@@ -517,10 +523,12 @@ consume();
 getusers();*/
 
 
- fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
+fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
+    
         return response.json();
 })
-.then((data)=>{
-    console.log(data);
+.then((response)=>{
+    console.log(response);
 })
 .catch((error)=>console.log(error));
+
