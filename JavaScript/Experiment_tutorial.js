@@ -393,6 +393,7 @@ dishes.forEach((item, index, arr)=>
 const promiseone= new Promise(function(resolve, reject){
     //do an async task 
     // database calls, cryptography, network call
+    
     setTimeout(function(){
         //console.log("display promise");
         resolve();
@@ -502,21 +503,21 @@ consume();
 /*async function getusers()
 {
    try 
-   {
+    {
         const response= await fetch("https://jsonplaceholder.typicode.com/users");
         //console.log(response);
         const data= await response.json();
         console.log(data);
-   } 
+    } 
    catch (err) 
-   {
+    {
         console.log("ERROR: lolLOL!!!", err);
-   }
+    }
 }
 getusers();*/
 
 
-fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
+ fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
         return response.json();
 })
 .then((data)=>{
