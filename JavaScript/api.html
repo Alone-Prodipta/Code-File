@@ -14,10 +14,60 @@
         <p>Repository:</p>
         <h3 id="repository"></h3>
     </div>
+    <div class="card">
+        <img alt="image not avilable">
+        <p>Followers:</p>
+        <h3 id="follower"></h3>
+        <p>Repository:</p>
+        <h3 id="repository"></h3>
+    </div>
+    <div class="card">
+        <img alt="image not avilable">
+        <p>Followers:</p>
+        <h3 id="follower"></h3>
+        <p>Repository:</p>
+        <h3 id="repository"></h3>
+    </div>
 <script>
-    const api= "https://api.github.com/users/hiteshchoudhary";
+    const api1= "https://api.github.com/users/hiteshchoudhary";
+    const api2= "https://api.github.com/users/Alone-Prodipta";
+    const api3= "https://api.github.com/users/Ritamnandy";
     const xhr= new XMLHttpRequest();
     xhr.open("GET",api);
+    xhr.onreadystatechange= function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4)
+        {
+            const data= JSON.parse(this.responseText);
+            //console.log(data);
+            const avatar= document.querySelector("img");
+            const repos= document.getElementById("repository");
+            const follower= document.getElementById("follower");
+            follower.innerText= data.followers; 
+            repos.innerText= data.public_repos;
+            avatar.src= data.avatar_url;
+        }
+    }
+    xhr.send();
+    const xhr= new XMLHttpRequest();
+    xhr.open("GET",api2);
+    xhr.onreadystatechange= function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4)
+        {
+            const data= JSON.parse(this.responseText);
+            //console.log(data);
+            const avatar= document.querySelector("img");
+            const repos= document.getElementById("repository");
+            const follower= document.getElementById("follower");
+            follower.innerText= data.followers; 
+            repos.innerText= data.public_repos;
+            avatar.src= data.avatar_url;
+        }
+    }
+    xhr.send();
+    const xhr= new XMLHttpRequest();
+    xhr.open("GET",api3);
     xhr.onreadystatechange= function(){
         console.log(xhr.readyState);
         if(xhr.readyState === 4)
