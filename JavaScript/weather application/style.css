@@ -1,0 +1,32 @@
+.container
+{
+    height: 50%;
+    width: 35%;
+    background-color: red;
+    border: solid none;
+    border-radius: 10px;
+    margin: auto;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 50%;
+}
+input
+{
+    height: 30px;
+    width: 80%;
+    border: solid none;
+    border-radius: 5px;
+    padding: 5px;
+}
+button
+{
+    height: 40px;
+    width: 10%;
+    border: solid black 1px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
