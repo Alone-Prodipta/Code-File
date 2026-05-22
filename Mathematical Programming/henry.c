@@ -17,10 +17,11 @@ void main()
             dy[i][j] = dy[i + 1][j - 1] - dy[i][j - 1];
         }
     }
-    printf("y\tDy\tD2y\tD3y\tD4y\t  D5y\n");
+    printf("x\ty\tDy\tD2y\tD3y\tD4y\t  D5y\n");
     printf("--------------------------------------------\n");
     for(i = 0; i < 6; i++) 
     {
+        printf("%d\n",x);
         for(j = 0; j < (6 - i); j++) 
         {
             printf("%d\t", dy[i][j]);
