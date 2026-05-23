@@ -5,49 +5,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
-        <a class="navbar-brand" href="#">Navbar</a>
+<body style="background-color: rgb(0, 0, 28);">
+    <nav id="navbar-example2" class="navbar  px-3 mb-3">
+        <a class="navbar-brand" style="color: white;">Portfolio</a>
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading1">First</a>
+                <a class="nav-link" href="#scrollspyHeading1">About Me</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading2">Second</a>
+                <a class="nav-link" href="#scrollspyHeading2">Skills</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                    aria-expanded="false">Dropdown</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
-                </ul>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading3">Projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading4">Contact</a>
             </li>
         </ul>
     </nav>
     <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
-        data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-        <h4 id="scrollspyHeading1">First heading</h4>
-        <p>...</p>
-        <h4 id="scrollspyHeading2">Second heading</h4>
-        <p>...</p>
-        <h4 id="scrollspyHeading3">Third heading</h4>
-        <p>...</p>
-        <h4 id="scrollspyHeading4">Fourth heading</h4>
-        <p>...</p>
-        <h4 id="scrollspyHeading5">Fifth heading</h4>
-        <p>...</p>
+        data-bs-smooth-scroll="true" class="scrollspy-example  p-3 rounded-2" tabindex="0">
+        <img src="https://www.shutterstock.com/image-photo/thick-paint-abstract-spiderman-600nw-2766626557.jpg"
+            alt="Avatar" class="avatar">
+        <h4 class="gradient-text">Prodipta Nayeb</h4>
+        <h1 style="color:white;text-align: center;">Full Stack Developer</h1>
+        <div class="card" style="background-color: rgb(0, 0, 28); border-style:none;">
+            <div class="card-body">
+                <p class="card-text" style="text-align: center;color:whitesmoke;">I craft beautiful, functional web
+                    experiences that make a difference.<br> Passionate about clean code, elegant design, and
+                    user-centered solutions.</p>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" style="margin-left: 40%;">View My Work</button>
+        <button type="button" class="btn btn-light" style="color:rgb(1, 1, 46)">Get in Touch</button>
+
+        <h4 id="scrollspyHeading1"
+            style="color: white; text-align: center;font-weight: bold;margin-top: 20%;font-size: 40px;">About Me</h4>
+        <div class="card"
+            style="background-color:transparent; border-style:none;color:whitesmoke;font-size: 20px;text-align: left;">
+
+            <div class="card-body">
+                <p class="card-text">
+                <pre>
+            Hi! I'm a passionate developer with over 5 years of experience building web applications that users love. I specialize in React, 
+                    
+            TypeScript, and modern web technologies.When I'm not coding, you'll find me exploring new technologies, contributing to open 
+                    
+            source, or sharing knowledge with the developer community.I believe in writing clean, maintainable code and creating 
+                    
+                                            delightful user experiences that solve real problems.
+                </pre>
+                </p>
+            </div>
+        </div>
+        <!--h4 id="scrollspyHeading2">Skills</h4>
+        <p>...</p-->
+        <h4 id="scrollspyHeading3"
+            style="color: white; text-align: center;font-weight: bold;margin-top: 20%;font-size: 40px;">Projects</h4>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card"
+                        style="background-color: transparent; border-style:none;color:whitesmoke;font-size: 20px;">
+                        <a href="https://feathers.great-site.net"><img src="fasion.png" class="card-img-top"></a>
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align:center">E-Commerce Website</h5>
+                            <p class="card-text">
+                            <pre>
+                                                Modern, responsive e‑commerce platform tailored for men’s fashion. 
+                                                Built with clean UI and intuitive navigation,it features a dynamic 
+                                                product catalog,category‑based browsing(formal,casual,traditional wear),
+                                                             and a streamlined shopping cart system.
+                            </pre>
+                            </p>
+                            <ul style="list-style-type: none;text-align: center;">
+                                <li>Elegant navbar with dropdown menus for easy product discovery</li>
+                                <li>Integrated search functionality for quick access to styles</li>
+                                <li>Mobile‑friendly design with Bootstrap for seamless responsiveness</li>
+                                <li>Custom branding and polished layout for a premium look</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card"
+                        style="background-color: transparent; border-style:none;color:whitesmoke;font-size: 20px;">
+                        <img src="fasion.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align:center">AI Assistant</h5>
+                            <p class="card-text">
+                            <pre>
+                                                An interactive AI platform designed to deliver intelligent responses and 
+                                                dynamic user experiences. The project showcases seamless integration of AI
+                                                models with a clean, responsive front‑end, making advanced features 
+                                                                accessible in a simple web interface.
+                            </pre>
+                            </p>
+                            <ul style="list-style-type: none;text-align: center;">
+                                <li>Real‑time AI interaction with natural language processing</li>
+                                <li>Responsive UI optimized for both desktop and mobile</li>
+                                <li>API integration for smooth backend communication</li>
+                                <li>Custom theme and polished layout for professional presentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card"
+                        style="background-color: transparent; border-style:none;color:whitesmoke;font-size: 20px;">
+                        <img src="fasion.png" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align:center">Calculator</h5>
+                            <p class="card-text">
+                            <pre>
+                                                Modern, responsive e‑commerce platform tailored for men’s fashion. 
+                                                Built with clean UI and intuitive navigation,it features a dynamic 
+                                                product catalog,category‑based browsing(formal,casual,traditional wear),
+                                                             and a streamlined shopping cart system.
+                            </pre>
+                            </p>
+                            <ul style="list-style-type: none;text-align: center;">
+                                <li>Elegant navbar with dropdown menus for easy product discovery</li>
+                                <li>Integrated search functionality for quick access to styles</li>
+                                <li>Mobile‑friendly design with Bootstrap for seamless responsiveness</li>
+                                <li>Custom branding and polished layout for a premium look</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <h4 id="scrollspyHeading4"
+            style="color: white; text-align: center;font-weight: bold;margin-top: 20%;font-size: 40px;">Connect with me</h4>
+        <div class="card text-center" style="background-color: transparent; border-style:none;color:whitesmoke;font-size: 20px;">
+            
+            <div class="card-body">
+                <p class="card-text">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                <a href="mailto:nayebprodipta@gmail.com" class="btn btn-primary"><i class="fa fa-envelope"></i> Email</a>
+            </div>
+            <div class="card-footer text-body-primary">
+                <a href="https://www.linkedin.com/in/prodipta-nayeb"><i class="fa fa-linkedin" style="font-size: 40px; margin-right: 50px;color: white;"></i></a>
+                <a href="https://github.com/Alone-Prodipta.com"><i class="fa fa-github"style="font-size: 40px; margin-right: 50px;color: white;"></i></a>
+                <a href="https://www.instagram.com/invites/contact/?igsh=5tnk05gy7emk&utm_content=w0vb025"><i class="fa fa-instagram"style="font-size: 40px; margin-right: 50px;color: white;"></i></a>
+            </div>
+        </div>
+
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
