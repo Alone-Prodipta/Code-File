@@ -48,6 +48,8 @@
         "FREQUENC (4).c": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
+    "liveServer.settings.CustomBrowser": "firefox",
+
     "sqltools.connections": [
         {
             "mysqlOptions": {
