@@ -393,6 +393,7 @@ dishes.forEach((item, index, arr)=>
 const promiseone= new Promise(function(resolve, reject){
     //do an async task 
     // database calls, cryptography, network call
+    
     setTimeout(function(){
         //console.log("display promise");
         resolve();
@@ -498,28 +499,36 @@ consume();
 /**************************************************************************/
 
 //fetch()--> 
-
+options= {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '096cecc092mshae29a1f757ae4e4p116439jsna73679860a59',
+        'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+    }
+}
 /*async function getusers()
 {
    try 
-   {
+    {
         const response= await fetch("https://jsonplaceholder.typicode.com/users");
         //console.log(response);
         const data= await response.json();
         console.log(data);
-   } 
+    } 
    catch (err) 
-   {
+    {
         console.log("ERROR: lolLOL!!!", err);
-   }
+    }
 }
 getusers();*/
 
 
 fetch("https://jsonplaceholder.typicode.com/users").then((response)=>{
+    
         return response.json();
 })
-.then((data)=>{
-    console.log(data);
+.then((response)=>{
+    console.log(response);
 })
 .catch((error)=>console.log(error));
+

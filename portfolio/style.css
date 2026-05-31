@@ -1,141 +1,44 @@
-body
-{
-	background-color:black;
-	overflow:hidden;
+.gradient-text {
+  font-size: 72px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #07147d 47%, #0dbed0 52%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.back
-{
-	width:90%;
-	height:90%;
-	background-color:black;
-	margin-left:70px;
-	margin-top:3.5%;
-	border-width:5px;
-	border-color:yellow;
-	border-style:solid;
-	
+.avatar {
+  vertical-align: middle;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-left: 40%;
 }
-#pic
+.nav-item a
 {
-	
-	z-index: 1;
-	position: relative;
-	float:right;
-	width:40%;
-	margin-right:30px;
-	margin-top: 40px;
-	height: 70%;
+  color: white;
 }
-.back>p
+.navbar
 {
-	font-size:120px;
-	display:flex;
-	color:white;
-	text-align:center;
-	padding-left:200px;
-	justify-content:start;
-	margin-top:-170px;
-}
-.overlay {
-  height: 100%;
-  width: 0;
   position: fixed;
-  z-index: 1;
   top: 0;
   left: 0;
-  background-color:yellow;
-  /*background-color: rgba(0,0,0, 0.9);*/
-  overflow-x: hidden;
-  transition: 0.5s;
-}
-#nav>p
-{
-	font-family:Roboto condensed;
-}
-.overlay-content {
-  position: relative;
-  top: 25%;
   width: 100%;
-  text-align: center;
-  margin-top: 30px;
+  padding: 30px;
+  background-color: rgba(0, 0, 28, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
 }
-
-.overlay a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
-}
-
-.overlay .sheet {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-Button
+#card:hover 
 {
-	width:200px;
-	height:90px;
-	margin-left:290px;
-	border-width:2px;
-	border-color:yellow;
-	border-style:solid;
-	border-radius:10px;
-	font-size:30px;
-	color:yellow;
-	font-family:Newsletter;
-	background-color:black;
-	padding:10px;
-	
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  border: 2px solid #ea00ff;
+  border-radius: 10px;
 }
-button:hover
-{
-	color:black;
-	background-color:yellow;
-	
-}
-@media screen and (max-width: 1564px)
-{
-	.back
-	{
-		padding-left: 10px;
-		padding-bottom: 0;
-		padding-top: 1rem;
-	}
-	.back>p
-	{
-		margin-top:2px;
-	}
-	button
-	{
-		margin-top:-10%;
-		height:65px;
-		padding:5px;
-	}
-
-}
-@media screen and (max-width: 1299px)
-{
-	#pic
-	{
-		height:25%;
-		width:30%;
-		margin-top:10px;
-		margin-right:38%;
-		position:relative;
-		display:block;
-	}
-	.back>p
-	{
-		margin-top:40%;
-	}
-	
-}
-	

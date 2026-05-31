@@ -1,38 +1,72 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="api.css">
 </head>
+
 <body style="background-color: white;">
-    <div class="card">
-        <img alt="image not avilable">
-        <p>Followers:</p>
-        <h3 id="follower"></h3>
-        <p>Repository:</p>
-        <h3 id="repository"></h3>
+    <div class="container">
+        <div class="card">
+            <img alt="image not avilable" id="avatar1">
+            <p>Followers:</p>
+            <h3 id="follower1"></h3>
+            <p>Repository:</p>
+            <h3 id="repository1"></h3>
+        </div>
+        <div class="card">
+            <img alt="image not avilable" id="avatar2">
+            <p>Followers:</p>
+            <h3 id="follower2"></h3>
+            <p>Repository:</p>
+            <h3 id="repository2"></h3>
+        </div>
+        <div class="card">
+            <img alt="image not avilable" id="avatar3">
+            <p>Followers:</p>
+            <h3 id="follower3"></h3>
+            <p>Repository:</p>
+            <h3 id="repository3"></h3>
+        </div>
+        <div class="card">
+            <img alt="image not avilable" id="avatar4">
+            <p>Followers:</p>
+            <h3 id="follower4"></h3>
+            <p>Repository:</p>
+            <h3 id="repository4"></h3>
+        </div>
     </div>
-<script>
-    const api= "https://api.github.com/users/hiteshchoudhary";
-    const xhr= new XMLHttpRequest();
-    xhr.open("GET",api);
-    xhr.onreadystatechange= function(){
-        console.log(xhr.readyState);
-        if(xhr.readyState === 4)
-        {
-            const data= JSON.parse(this.responseText);
-            //console.log(data);
-            const avatar= document.querySelector("img");
-            const repos= document.getElementById("repository");
-            const follower= document.getElementById("follower");
-            follower.innerText= data.followers; 
-            repos.innerText= data.public_repos;
-            avatar.src= data.avatar_url;
+    <script>
+        const api1 = "https://api.github.com/users/hiteshchoudhary";
+        const api2 = "https://api.github.com/users/Alone-Prodipta";
+        const api3 = "https://api.github.com/users/Ritamnandy";
+        const api4 = "https://api.github.com/users/Souma061";
+        function load_api(api, pic, follower, repos) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", api);
+            xhr.onreadystatechange = function () {
+                console.log(xhr.readyState);
+                if (xhr.readyState === 4) {
+                    const data = JSON.parse(this.responseText);
+                    //console.log(data);
+                    const avatar = document.getElementById(pic);
+                    const repos_el = document.getElementById(repos);
+                    const follower_el = document.getElementById(follower);
+                    follower_el.innerText = data.followers;
+                    repos_el.innerText = data.public_repos;
+                    avatar.src = data.avatar_url;
+                }
+            }
+            xhr.send();
         }
-    }
-    xhr.send();
-</script>
+        load_api(api1, "avatar1", "follower1", "repository1");
+        load_api(api2, "avatar2", "follower2", "repository2");
+        load_api(api3, "avatar3", "follower3", "repository3");
+        load_api(api4, "avatar4", "follower4", "repository4");
+    </script>
 </body>
+
 </html>
