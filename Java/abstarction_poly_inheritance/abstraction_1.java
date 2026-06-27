@@ -1,4 +1,3 @@
-
 //Parent class
 class Mobile
 {
