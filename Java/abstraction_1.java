@@ -24,8 +24,8 @@ public class abstraction_1
 {
     public static void main(String[] args)
     {
-        Mobile P = new SmartMobile();
-        SmartMobile P1 = new SmartMobile();
+        Mobile P = new SmartMobile();// Creating an object of the parent class
+        SmartMobile P1 = new SmartMobile();// Creating an object of the child class
 
         P.PhoneOn();
         P1.Run();
