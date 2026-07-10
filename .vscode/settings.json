@@ -66,5 +66,6 @@
             "database": "pn_db",
             "password": "Prodipta_007#"
         }
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }
