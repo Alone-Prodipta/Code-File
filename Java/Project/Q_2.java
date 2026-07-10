@@ -8,7 +8,7 @@ class Q_2
         int number= 0;
         System.out.println("Enter any number: ");
         number= my.nextInt();
-        if(number>0)
+        if(number>0||number<0)
         {
             System.out.println("The given number is an integer");
         }
