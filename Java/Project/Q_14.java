@@ -4,16 +4,20 @@ class Q_14
     public static void main(String[] args)
     {
         Scanner my= new Scanner(System.in);
-        char alpha;
-        System.out.println("Enter your favourite letter:");
-        alpha= my.next().charAt(0);
-        if(alpha=='a'||alpha=='e'||alpha=='i'||alpha=='o'||alpha=='u')
+        int year=0;
+        System.out.println("Enter the year which you want to check:");
+        year= my.nextInt();
+        if(year%400 == 0||year%100==0)
         {
-            System.out.println("The entered letter is a vowel");
+            System.out.println(year+" is a leap year.");
+        }
+        else if(year%4 == 0)
+        {
+            System.out.println(year+" is a leap year.");
         }
         else
         {
-            System.out.print("It must be a consonant,number or a special charecter");
+            System.out.println(year+" is not a leap year.");
         }
     }
 }
