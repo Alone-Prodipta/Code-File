@@ -3,36 +3,16 @@ class Q_19
 {
     public static void main(String[] args)
     {
-        Scanner my= new Scanner(System.in);
-        int i=0,n=0,num,c=0,sum=0,rem=0;
-        double p=0.0;
-        System.out.println("Enter any number:");
-        n= my.nextInt();
-        num=n;
-        while(num>0)
+        Scanner my =new Scanner(System.in);
+        int num=0,i=1,mul=0,lim=0;
+        System.out.println("Enter the number to see its table:");
+        num=my.nextInt();
+        System.out.println("Enter the limit of the table:");
+        lim=my.nextInt();
+        for(i=1;i<=lim;i++)
         {
-            num=num/10;
-            c++;
+            mul= num*i;
+            System.out.println(num+" * "+i+" = "+mul);
         }
-        num=n;
-        while(num>0)
-        {
-            rem=num%10;
-            p= Math.pow(rem,c);  
-            sum += (int) p;
-            num=num/10;
-        }    
-
-            if(sum==n) 
-            {
-                System.out.println("Armstrong number.");
-            }
-            else
-            {
-                System.out.println("Not an Armstrong number.");
-            }
     }
-}    
-    
-    
-    
+}

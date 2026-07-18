@@ -7,6 +7,7 @@ class Q_5
         String name, low_ch = "";
         System.out.println("Enter your name");
         name = my.nextLine();
+        System.err.println("The transformed sentence:");
         for (int i = 0; i < name.length(); i++)
         {
             char ch = name.charAt(i);
