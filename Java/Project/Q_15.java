@@ -6,7 +6,7 @@ class Q_15
         Scanner my= new Scanner(System.in);
         char alpha;
         System.out.println("Enter your favourite letter:");
-        alpha= my.next().charAt(0);
+        alpha= Character.toLowerCase(my.next().charAt(0));
         if(alpha=='a'||alpha=='e'||alpha=='i'||alpha=='o'||alpha=='u')
         {
             System.out.println("The entered letter is a vowel");
