@@ -20,38 +20,61 @@ int fact(int num)
 }
 void main() 
 {
-    int i, j, x[10]={0,1,2,3,4,5};
-    int dy[6][6],x0; 
+    int i, j, x[10]={0,1,2,3,4,5,6};
+    int dy[6][6],x0,n=0; 
     printf("Enter the numbers of y=fx(): \n");
-    for(i=0; i< 6; i++)
+    scanf("%d", &n);
+    printf("Enter the elements of y=fx(): \n");
+    for(i=0; i< n; i++)
     {
         scanf("%d",&dy[i][0]);
     }
     x0= dy[0][0];
-    for(j = 1; j < 6; j++) 
+    for(j = 1; j < n; j++) 
     { 
-        for(i = 0; i < (6 - j); i++) 
+        for(i = 0; i < (n - j); i++) 
         {
             dy[i][j] = dy[i + 1][j - 1] - dy[i][j - 1];
         }
     }
-    printf("x\ty\tDy\tD2y\tD3y \tD4y\tD5y\n");
+    printf("x\ty\tDy\tD2y\tD3y\tD4y\tD5y\n");
     printf("---------------------------------------------------------\n");
-    for(i = 0; i < 6; i++) 
+    for(i = 0; i < n; i++) 
     {
         printf("%d\t",x[i]);
-        for(j = 0; j < (6 - i); j++) 
+        for(j = 0; j < (n - i); j++) 
         {
             printf("%d\t", dy[i][j]);
         }
         printf("\n");
     }
     printf("Calculating the forward differnece:\n");
-    int u=0,h=1,k=0;
-    float const_x=1.5,result=0.0;
-    u= (const_x-x0)/h;
-    
-       result = dy[0][k]+(u*dy[0][k+h])/fact(h)+(u*(u-1)*dy[0][k+h+1])/fact(h+1)+(u*(u-1)*(u-2)*dy[0][k+h+2])/fact(h+2);
-    
-    printf("%f", result);
+    int h = 1;
+    float const_x = 0.5, result = 0.0;
+    float u = (const_x - x[0]) / h;
+    result = dy[0][0];
+    for (int r = 1; r < n; r++)
+    {
+        float term = 1.0;
+        for (int m = 0; m < r; m++)
+        {
+            term= term*(u - m);
+        }
+        result= result+ term * dy[0][r] / fact(r);
+    }
+    printf("%.3f", result);
+    printf("\nCalculating the backward differnece:\n");
+    const_x = 2.5;
+    u = (const_x - x[n - 1]) / h;
+    result = dy[n - 1][0];
+    for (int r = 1; r < n; r++)
+    {
+        float term = 1.0;
+        for (int m = 0; m < r; m++)
+        {
+            term= term*(u + m);
+        }
+        result= result+ ((term * dy[n - 1][r]) / fact(r));
+    }
+    printf("%.3f", result);
 }
