@@ -25,7 +25,7 @@ void main()
     while ((b - a) >= tolerance && iter < maxIter) 
     {
         c = (a + b) / 2.0; // midpoint
-        printf("%d\t %.6f\t %.6f\t %.6f\t %.6f\n", n, a, b, c, func(c));
+        printf("%d\t %.6f\t %.6f\t %.6f\t %.6f\n", iter, a, b, c, func(c));
 
         // Check if root found
         if(fabs(func(c)) < tolerance) 
