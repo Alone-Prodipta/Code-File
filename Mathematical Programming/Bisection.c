@@ -11,7 +11,7 @@ double func(double x)
 // for regula falsy method both values of a and b should be in opposite sign. 
 void main() 
 {
-    double a = 1.5, b = -1.6 , c;   // initial interval [1,2]
+    double a = 1.5, b = 1.6 , c;   // initial interval [1,2]
     double tolerance = 0.0001; // stopping condition
     int maxIter = 100, iter = 0;
 
